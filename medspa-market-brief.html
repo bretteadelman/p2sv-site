@@ -286,6 +286,16 @@
       line-height: 1.7;
     }
 
+    /* ── LINKS ────────────────────────── */
+    a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-decoration-color: var(--rule);
+      text-underline-offset: 2px;
+      transition: text-decoration-color 0.15s;
+    }
+    a:hover { text-decoration-color: var(--ink); }
+
     /* ── PRINT ────────────────────────── */
     @media print {
       body { padding: 28px; max-width: 100%; }
@@ -309,7 +319,7 @@
     <span class="doc-eyebrow">Market Context</span>
     <h1 class="doc-title">The MedSpa Market is Booming.<br /><em>Market Leaders Create a Differentiated Experience.</em></h1>
     <p class="doc-summary">
-      Key takeaways from the Solomon Partners MedSpa Market Overview (Q2 2024). The $19B industry growing to $32B is fragmented, cash-pay, and increasingly differentiated by how a room feels.
+      Key takeaways from the <a href="https://www.solomonpartners.com/wp-content/uploads/2024/06/Solomon-Partners-MedSpa-Market-Overview.pdf" target="_blank" rel="noopener">Solomon Partners MedSpa Market Overview (Q2 2024)</a>. The $19B industry growing to $32B is fragmented, cash-pay, and increasingly differentiated by how a room feels.
     </p>
   </div>
 
@@ -426,7 +436,7 @@
         <div class="tw-desc">The pharmaceutical industry's accelerating shift toward peptide biologics as novel drug candidates is validating and expanding the science available to aesthetic practitioners.</div>
       </div>
     </div>
-    <p style="margin-top:18px;padding-top:16px;border-top:1px solid var(--rule);">The "skintellectual" consumer — arriving educated and demanding evidence-based protocols — is driving med spas to offer peptide-based treatments as a differentiator. Operators who can speak fluently to the science are building a new category of trust-based loyalty that transactional providers cannot replicate. <span style="font-style:italic;color:var(--ink);">Source: Peptides, NCBI Bookshelf (NBK562260).</span></p>
+    <p style="margin-top:18px;padding-top:16px;border-top:1px solid var(--rule);">The "skintellectual" consumer — arriving educated and demanding evidence-based protocols — is driving med spas to offer peptide-based treatments as a differentiator. Operators who can speak fluently to the science are building a new category of trust-based loyalty that transactional providers cannot replicate. <a href="https://www.ncbi.nlm.nih.gov/books/NBK562260/" target="_blank" rel="noopener" style="font-style:italic;color:var(--ink);">Source: Peptides, NCBI Bookshelf (NBK562260).</a></p>
   </div>
 
   <hr />
@@ -449,7 +459,7 @@
   <div class="doc-footer">
     <div class="footer-left">
       <span class="footer-brand">P2SV — Push to Start Ventures</span>
-      <span class="footer-sub">© 2026 · Confidential · Los Angeles, CA</span>
+      <span class="footer-sub">© 2026 · Los Angeles, CA</span>
     </div>
     <div class="footer-right">
       pushtostart.ventures
