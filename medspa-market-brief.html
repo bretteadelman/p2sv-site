@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Med Spa Market Brief · P2SV</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Spectral+SC:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_Qu7QqvWjCjagXm1qouEQM8QyiIcVzLUrmLOZD8jB7HB', {
+      api_host: 'https://us.i.posthog.com',
+      person_profiles: 'identified_only',
+    });
+  </script>
+  <style>
+    :root {
+      --ink:   #111110;
+      --paper: #fafaf8;
+      --mid:   #666660;
+      --rule:  #d8d8d4;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Spectral', Georgia, serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 52px 36px 72px;
+    }
+
+    /* ── HEADER ───────────────────────── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--ink);
+      margin-bottom: 44px;
+    }
+
+    .pts-wordmark {
+      font-family: 'Spectral SC', Georgia, serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .doc-meta {
+      font-size: 11px;
+      color: var(--mid);
+      text-align: right;
+      font-style: italic;
+      line-height: 1.6;
+    }
+
+    /* ── TITLE BLOCK ──────────────────── */
+    .title-block {
+      margin-bottom: 44px;
+    }
+
+    .doc-eyebrow {
+      font-family: 'Spectral SC', Georgia, serif;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--mid);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .doc-title {
+      font-size: 28px;
+      font-weight: 300;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      margin-bottom: 18px;
+    }
+
+    .doc-title em {
+      font-style: italic;
+    }
+
+    .doc-summary {
+      font-size: 12.5px;
+      line-height: 1.85;
+      color: var(--mid);
+      border-left: 1px solid var(--rule);
+      padding-left: 18px;
+      max-width: 520px;
+    }
+
+    /* ── STAT STRIP ───────────────────── */
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      margin-bottom: 44px;
+      padding: 20px 0;
+      gap: 0;
+    }
+
+    .stat-cell {
+      padding: 0 20px 0 0;
+      border-right: 1px solid var(--rule);
+    }
+    .stat-cell:first-child { padding-left: 0; }
+    .stat-cell:last-child { border-right: none; padding-right: 0; }
+
+    .stat-big {
+      font-size: 26px;
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 10px;
+      color: var(--mid);
+      line-height: 1.4;
+      font-style: italic;
+    }
+
+    /* ── SECTION ──────────────────────── */
+    .section {
+      margin-bottom: 38px;
+    }
+
+    .section-label {
+      font-family: 'Spectral SC', Georgia, serif;
+      font-size: 9.5px;
+      letter-spacing: 0.12em;
+      color: var(--mid);
+      display: block;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+    .section-title em { font-style: italic; font-weight: 300; }
+
+    p {
+      font-size: 12.5px;
+      line-height: 1.85;
+      color: var(--mid);
+      margin-bottom: 10px;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── TWO-COL ──────────────────────── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    /* ── LIST ─────────────────────────── */
+    .tp-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .tp-list li {
+      font-size: 12px;
+      line-height: 1.7;
+      color: var(--mid);
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .tp-list li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    /* ── RULED BLOCK ──────────────────── */
+    .ruled-block {
+      border: 1px solid var(--rule);
+      padding: 24px 22px;
+      margin-bottom: 38px;
+    }
+
+    .ruled-block .section-label {
+      border-bottom-color: var(--rule);
+    }
+
+    .ruled-block p { color: var(--mid); }
+
+    .ruled-block .tp-list li { color: var(--mid); }
+
+    /* ── TAILWIND GRID ────────────────── */
+    .tailwind-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1px solid var(--rule);
+      margin-top: 14px;
+    }
+
+    .tw-cell {
+      padding: 12px 14px;
+      border-right: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .tw-cell:nth-child(even) { border-right: none; }
+    .tw-cell:nth-last-child(-n+2) { border-bottom: none; }
+
+    .tw-title {
+      font-size: 11.5px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 3px;
+    }
+
+    .tw-desc {
+      font-size: 11px;
+      color: var(--mid);
+      line-height: 1.6;
+    }
+
+    /* ── DIVIDER ──────────────────────── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 38px 0;
+    }
+
+    /* ── FOOTER ───────────────────────── */
+    .doc-footer {
+      padding-top: 14px;
+      border-top: 1px solid var(--ink);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .footer-brand {
+      font-family: 'Spectral SC', Georgia, serif;
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+    }
+
+    .footer-sub {
+      font-size: 10px;
+      color: var(--mid);
+      font-style: italic;
+    }
+
+    .footer-right {
+      font-size: 10px;
+      color: var(--mid);
+      font-style: italic;
+      text-align: right;
+      line-height: 1.7;
+    }
+
+    /* ── PRINT ────────────────────────── */
+    @media print {
+      body { padding: 28px; max-width: 100%; }
+      .ruled-block, .stat-strip { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <a href="/" class="pts-wordmark">P2SV — Push to Start Ventures</a>
+    <div class="doc-meta">
+      Market Brief · Med Spa<br />
+      Los Angeles, CA
+    </div>
+  </div>
+
+  <!-- TITLE -->
+  <div class="title-block">
+    <span class="doc-eyebrow">Market Context</span>
+    <h1 class="doc-title">The market is booming.<br /><em>Experience wins.</em></h1>
+    <p class="doc-summary">
+      Key takeaways from the Solomon Partners MedSpa Market Overview (Q2 2024). The $19B industry growing to $32B is fragmented, cash-pay, and increasingly differentiated by how a room feels.
+    </p>
+  </div>
+
+  <!-- STAT STRIP -->
+  <div class="stat-strip">
+    <div class="stat-cell">
+      <span class="stat-big">$32B</span>
+      <span class="stat-label">US MedSpa TAM<br/>by 2027</span>
+    </div>
+    <div class="stat-cell" style="padding-left:20px;">
+      <span class="stat-big">14.7%</span>
+      <span class="stat-label">Market CAGR<br/>2023–2027</span>
+    </div>
+    <div class="stat-cell" style="padding-left:20px;">
+      <span class="stat-big">90%</span>
+      <span class="stat-label">Independently<br/>owned operators</span>
+    </div>
+    <div class="stat-cell" style="padding-left:20px;">
+      <span class="stat-big">$536</span>
+      <span class="stat-label">Average spend<br/>per visit</span>
+    </div>
+  </div>
+
+  <!-- MARKET OVERVIEW -->
+  <div class="section">
+    <span class="section-label">Market Overview</span>
+    <div class="two-col">
+      <div>
+        <h2 class="section-title">Scale & Momentum</h2>
+        <ul class="tp-list">
+          <li>9,400+ US med spa locations in 2023, nearly double the 2018 figure</li>
+          <li>Expected to grow to 12,000+ locations by 2027 — a 28% increase</li>
+          <li>Market growing within a $1.3T Health & Wellness TAM</li>
+          <li>$2M average annual revenue per single-location operator</li>
+          <li>70,000 professionals currently employed across the sector</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="section-title">Who's in the Chair</h2>
+        <ul class="tp-list">
+          <li>88% of all procedures used by women</li>
+          <li>78% of female customers are under 55 — a young, loyal demographic</li>
+          <li>35–54 is the largest age group, representing 52% of customers</li>
+          <li>Customers increase spend and frequency over time, building high LTV</li>
+          <li>95% of customers under 40 arrive with strong product preferences</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- MACRO TAILWINDS -->
+  <div class="section">
+    <span class="section-label">Tailwinds</span>
+    <h2 class="section-title">Why This Market Doesn't Slow Down</h2>
+    <div class="tailwind-grid">
+      <div class="tw-cell">
+        <div class="tw-title">Aging Population</div>
+        <div class="tw-desc">Older customers add restorative treatments on top of preventative routines — compounding per-client revenue over time.</div>
+      </div>
+      <div class="tw-cell">
+        <div class="tw-title">Zoom & Appearance Pressure</div>
+        <div class="tw-desc">Remote work normalized a new level of appearance consciousness that has persisted and become baseline behavior.</div>
+      </div>
+      <div class="tw-cell">
+        <div class="tw-title">Cultural Acceptance</div>
+        <div class="tw-desc">Destigmatization across gender and age cohorts. Procedures that were "secret" are now social currency.</div>
+      </div>
+      <div class="tw-cell">
+        <div class="tw-title">GLP-1 / Ozempic Effect</div>
+        <div class="tw-desc">Rapid weight-loss drugs creating downstream demand for skin tightening and body contouring — new patient journeys entering the funnel.</div>
+      </div>
+      <div class="tw-cell">
+        <div class="tw-title">Social Media Loop</div>
+        <div class="tw-desc">Skincare content drives awareness → visits drive content → content drives awareness. The flywheel rewards differentiated experiences.</div>
+      </div>
+      <div class="tw-cell">
+        <div class="tw-title">Skintellectual Demand</div>
+        <div class="tw-desc">Consumers are arriving educated and seeking advanced protocols. The bar for "good enough" keeps rising.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- RULED BLOCK: COMPETITIVE DYNAMICS -->
+  <div class="ruled-block">
+    <span class="section-label">Competitive Landscape</span>
+    <h2 class="section-title">The 90% who compete on<br /><em>experience, not scale.</em></h2>
+    <p>Nine in ten med spas are still independently owned. Private equity has been aggressive — 15+ platform acquisitions in 2023 alone — but the vast majority of the market remains founder-led. These operators compete on quality, service breadth, and social presence. They cannot out-spend PE platforms on equipment or marketing.</p>
+    <p style="margin-top:10px;">Their edge is the room itself. How it feels to be in it. The ambient sensory environment is the one experience layer that is low-cost to implement, invisible to PE playbooks, and emotionally memorable enough to drive word-of-mouth.</p>
+    <ul class="tp-list" style="margin-top:18px;padding-top:16px;border-top:1px solid var(--rule);">
+      <li>Patient experience is a primary value-defining theme flagged by PE investors — it applies equally to independents</li>
+      <li>Tech-enabled solutions explicitly cited as a driver of traffic, referrals, and revenue per Solomon Partners</li>
+      <li>Loyalty and recurring revenue are top-of-mind investor metrics for high-performing independents</li>
+      <li>Diversifying revenue beyond procedures is a key differentiation strategy for high-performing independents</li>
+    </ul>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="doc-footer">
+    <div class="footer-left">
+      <span class="footer-brand">P2SV — Push to Start Ventures</span>
+      <span class="footer-sub">© 2026 · Confidential · Los Angeles, CA</span>
+    </div>
+    <div class="footer-right">
+      pushtostart.ventures
+    </div>
+  </div>
+
+</body>
+</html>
