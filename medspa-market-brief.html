@@ -212,6 +212,65 @@
 
     .ruled-block .tp-list li { color: var(--mid); }
 
+    /* ── INVERTED BLOCK ───────────────── */
+    .ruled-block.inverted {
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .ruled-block.inverted .section-label {
+      color: rgba(250,250,248,0.45);
+      border-bottom-color: rgba(250,250,248,0.15);
+    }
+
+    .ruled-block.inverted .section-title {
+      color: var(--paper);
+    }
+
+    .ruled-block.inverted p {
+      color: rgba(250,250,248,0.65);
+    }
+
+    .ruled-block.inverted .tp-list li {
+      color: rgba(250,250,248,0.65);
+    }
+
+    .ruled-block.inverted .tp-list li::before {
+      color: var(--paper);
+    }
+
+    .ruled-block.inverted hr,
+    .ruled-block.inverted [style*="border-top"] {
+      border-top-color: rgba(250,250,248,0.15) !important;
+    }
+
+    /* ── CTA ──────────────────────────── */
+    .cta-row {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(250,250,248,0.15);
+    }
+
+    .cta-btn {
+      display: inline-block;
+      font-family: 'Spectral SC', Georgia, serif;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--ink);
+      background: var(--paper);
+      text-decoration: none;
+      padding: 10px 20px;
+      border: 1px solid var(--paper);
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .cta-btn:hover {
+      background: transparent;
+      color: var(--paper);
+      text-decoration: none;
+      text-decoration-color: transparent;
+    }
+
     /* ── TAILWIND GRID ────────────────── */
     .tailwind-grid {
       display: grid;
@@ -442,17 +501,20 @@
   <hr />
 
   <!-- RULED BLOCK: COMPETITIVE DYNAMICS -->
-  <div class="ruled-block">
+  <div class="ruled-block inverted">
     <span class="section-label">Competitive Landscape</span>
     <h2 class="section-title">The 90% who compete on<br /><em>experience, not scale.</em></h2>
     <p>Nine in ten med spas are still independently owned. Private equity has been aggressive — 15+ platform acquisitions in 2023 alone — but the vast majority of the market remains founder-led. These operators compete on quality, service breadth, and social presence. They cannot out-spend PE platforms on equipment or marketing.</p>
     <p style="margin-top:10px;">Their edge is the room itself. How it feels to be in it. The ambient sensory environment is the one experience layer that is low-cost to implement, invisible to PE playbooks, and emotionally memorable enough to drive word-of-mouth.</p>
-    <ul class="tp-list" style="margin-top:18px;padding-top:16px;border-top:1px solid var(--rule);">
+    <ul class="tp-list" style="margin-top:18px;padding-top:16px;border-top:1px solid rgba(250,250,248,0.15);">
       <li>Patient experience is a primary value-defining theme flagged by PE investors — it applies equally to independents</li>
       <li>Tech-enabled solutions explicitly cited as a driver of traffic, referrals, and revenue per Solomon Partners</li>
       <li>Loyalty and recurring revenue are top-of-mind investor metrics for high-performing independents</li>
       <li>Diversifying revenue beyond procedures is a key differentiation strategy for high-performing independents</li>
     </ul>
+    <div class="cta-row">
+      <a href="https://pushtostart.ventures" target="_blank" rel="noopener" class="cta-btn">Learn More from P2SV</a>
+    </div>
   </div>
 
   <!-- FOOTER -->
