@@ -708,5 +708,33 @@
     </div>
   </div>
 
+  <script>
+    (function () {
+      var form  = document.querySelector('form[name="medspa-inquiry"]');
+      var block = document.getElementById('contact');
+      if (!form || !block) return;
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        fetch(window.location.pathname, {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body:    new URLSearchParams(new FormData(form)).toString()
+        })
+        .then(function () {
+          block.innerHTML =
+            '<span class="section-label">Message Received</span>' +
+            '<h2 class="section-title">Introduction sent.<br /><em>We\'ll be in touch shortly.</em></h2>' +
+            '<p>Your message has been received by the P2SV team. Expect a response within one to two business days.</p>';
+        })
+        .catch(function () {
+          block.innerHTML =
+            '<span class="section-label">Something went wrong</span>' +
+            '<p>Please reach us directly at <a href="mailto:brett@pushtostart.ventures">brett@pushtostart.ventures</a>.</p>';
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
