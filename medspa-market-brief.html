@@ -666,9 +666,8 @@
     <span class="section-label">Start a Conversation</span>
     <h2 class="section-title">Working with operators building a<br /><em>differentiated client experience.</em></h2>
     <p>P2SV partners with independent med spa operators, investors, and wellness brands navigating this market. If this report resonates, introduce yourself.</p>
-    <form name="medspa-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="margin-top:20px;">
-      <input type="hidden" name="form-name" value="medspa-inquiry" />
-      <p style="display:none;"><input name="bot-field" /></p>
+    <form id="medspa-form" style="margin-top:20px;">
+
       <div class="form-row">
         <div class="form-field">
           <label class="form-label" for="name">Name</label>
@@ -710,23 +709,31 @@
 
   <script>
     (function () {
-      var form  = document.querySelector('form[name="medspa-inquiry"]');
+      var FORMSPREE = 'FORMSPREE_ENDPOINT'; // replace with https://formspree.io/f/xxxxxxxx
+      var form  = document.getElementById('medspa-form');
       var block = document.getElementById('contact');
       if (!form || !block) return;
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        fetch(window.location.pathname, {
+        fetch(FORMSPREE, {
           method:  'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body:    new URLSearchParams(new FormData(form)).toString()
+          headers: { 'Accept': 'application/json' },
+          body:    new FormData(form)
         })
-        .then(function () {
-          block.innerHTML =
-            '<span class="section-label">Message Received</span>' +
-            '<h2 class="section-title">Introduction sent.<br /><em>We\'ll be in touch shortly.</em></h2>' +
-            '<p>Your message has been received by the P2SV team. Expect a response within one to two business days.</p>';
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.ok) {
+            block.innerHTML =
+              '<span class="section-label">Message Received</span>' +
+              '<h2 class="section-title">Introduction sent.<br /><em>We\'ll be in touch shortly.</em></h2>' +
+              '<p>Your message has been received by the P2SV team. Expect a response within one to two business days.</p>';
+          } else {
+            block.innerHTML =
+              '<span class="section-label">Something went wrong</span>' +
+              '<p>Please reach us directly at <a href="mailto:brett@pushtostart.ventures">brett@pushtostart.ventures</a>.</p>';
+          }
         })
         .catch(function () {
           block.innerHTML =
