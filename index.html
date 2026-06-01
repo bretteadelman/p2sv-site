@@ -58,17 +58,22 @@
       font-family: 'EB Garamond', Georgia, serif;
       background: #ffffff;
       color: #111111;
-      padding: 2rem;
+      padding: 0;
       max-width: 620px;
       margin: 0 auto;
       line-height: 1.6;
+    }
+    @media (min-width: 640px) {
+      body {
+        padding: 2rem;
+      }
     }
     .page-frame {
       border: 10px solid #111111;
     }
     h1 {
       font-family: 'Climate Crisis', sans-serif;
-      font-size: 4.5rem;
+      font-size: clamp(2rem, 12vw, 4.5rem);
       font-weight: 400;
       letter-spacing: 0.02em;
       text-transform: uppercase;
