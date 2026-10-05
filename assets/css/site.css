@@ -1,0 +1,587 @@
+/* ==========================================================================
+   P2SV site components.
+   The design system ships React reference implementations in
+   p2sv-design-system/components/. This is the same markup and the same token
+   values recreated as plain CSS classes, because the site is static HTML.
+   Nothing here introduces a colour, font, radius or shadow outside the tokens.
+   ========================================================================== */
+
+/* ── Canvas · paper around the sheet. Flush to the viewport on a phone, so
+   the frame reads as the edge of the page itself. ─────────────────────────── */
+.p2-canvas { padding: 0; }
+
+@media (min-width: 600px) {
+  .p2-canvas { padding: var(--space-7) var(--space-5); }
+}
+
+/* ── Sheet · the centred framed surface (Masthead.jsx) ───────────────────── */
+.p2-sheet {
+  max-width: var(--sheet-width);
+  margin: 0 auto;
+  border: var(--border-frame) solid var(--border-frame-color);
+  background: var(--surface-sheet);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.p2-sheet-body {
+  padding: var(--space-6) var(--space-7) var(--space-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* ── Masthead band · the frame thickened (Masthead.jsx) ──────────────────── */
+.p2-masthead {
+  --p2-mark: 64px;
+  height: var(--band-height);
+  flex: none;
+  background: var(--surface-inverse);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding: 0 calc(var(--p2-mark) * 0.5) calc(var(--p2-mark) * 0.3);
+}
+
+.p2-masthead-meta {
+  font-style: italic;
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  color: var(--text-inverse-muted);
+  text-align: right;
+  white-space: nowrap;
+  flex: none;
+}
+
+/* ── Wordmark (Wordmark.jsx) ─────────────────────────────────────────────── */
+.p2-wordmark {
+  font-family: var(--font-display);
+  font-variation-settings: var(--display-variation);
+  font-weight: var(--weight-regular);
+  font-size: var(--p2-mark, var(--text-wordmark));
+  line-height: 0.8;
+  letter-spacing: var(--tracking-display);
+  color: var(--ink);
+  display: inline-block;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.p2-wordmark--inverse { color: var(--paper); }
+a.p2-wordmark:hover { text-decoration: none; }
+
+/* ── Label (Label.jsx) ───────────────────────────────────────────────────── */
+.p2-label {
+  font-family: var(--font-serif);
+  line-height: 1.5;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-label);
+  color: var(--text-label);
+}
+
+.p2-label--caps {
+  font-variant: normal;
+  text-transform: uppercase;
+  font-weight: var(--weight-semibold);
+  font-size: var(--text-caps);
+  letter-spacing: var(--tracking-caps);
+  color: var(--text-primary);
+}
+
+.p2-label--rule {
+  border-bottom: var(--border-hair) solid var(--border-hair-color);
+  padding-bottom: var(--space-2);
+}
+
+.p2-label--inverse { color: var(--text-inverse-muted); }
+.p2-label--inverse.p2-label--caps { color: var(--inverse-muted); font-size: var(--text-caption); }
+.p2-label--inverse.p2-label--rule { border-bottom-color: var(--inverse-rule); }
+
+/* ── Headline (Headline.jsx) ─────────────────────────────────────────────── */
+.p2-headline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.p2-headline h1,
+.p2-headline h2 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-h1);
+  line-height: var(--leading-heading);
+  color: var(--text-primary);
+  text-wrap: balance;
+}
+
+.p2-headline em,
+.p2-headline i { font-style: italic; }
+
+.p2-dek {
+  margin: 0;
+  max-width: var(--measure);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
+  color: var(--text-secondary);
+  text-wrap: pretty;
+}
+
+.p2-h2 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-h2);
+  line-height: var(--leading-heading);
+  color: var(--text-primary);
+}
+
+.p2-h2 em { font-style: italic; }
+
+.p2-h3 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-h3);
+  line-height: var(--leading-heading);
+  color: var(--text-primary);
+}
+
+/* ── List (List.jsx) · markers are — · or display numerals ───────────────── */
+.p2-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* The marker hangs in the gutter rather than being a flex sibling, so a link
+   and the text after it stay in one inline run. */
+.p2-list > li {
+  position: relative;
+  padding-left: 30px;
+  color: var(--text-primary);
+}
+
+.p2-list > li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--text-decorative);
+}
+
+.p2-list--dot > li { padding-left: 22px; }
+.p2-list--dot > li::before { content: '·'; }
+
+.p2-list--number {
+  counter-reset: p2-item;
+}
+
+.p2-list--number > li { counter-increment: p2-item; padding-left: 38px; }
+
+.p2-list--number > li::before {
+  content: counter(p2-item, decimal-leading-zero);
+  font-family: var(--font-display);
+  font-variation-settings: var(--display-variation);
+  font-size: 20px;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.p2-list--inverse > li { color: var(--paper); }
+.p2-list--inverse > li::before { color: var(--inverse-muted); }
+
+.p2-list--secondary > li { color: var(--text-secondary); }
+
+/* ── Callout (Callout.jsx) ───────────────────────────────────────────────── */
+.p2-callout {
+  background: var(--surface-inverse);
+  color: var(--paper);
+  padding: var(--space-5) 28px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.p2-callout .p2-list > li { font-size: var(--text-body-lg); line-height: 1.4; }
+.p2-callout a:not(.p2-btn) { color: var(--paper); }
+
+.p2-callout--cta {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.p2-callout-statement {
+  font-style: italic;
+  font-size: var(--text-body-lg);
+  line-height: 1.35;
+  max-width: 32ch;
+}
+
+/* ── Button (Button.jsx) ─────────────────────────────────────────────────── */
+.p2-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-serif);
+  font-variant: small-caps;
+  text-transform: lowercase;
+  font-size: var(--text-body);
+  letter-spacing: var(--tracking-caps);
+  line-height: 1;
+  padding: 13px 22px;
+  border: var(--border-rule) solid var(--ink);
+  border-radius: var(--radius);
+  background: var(--ink);
+  color: var(--paper);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease),
+              text-decoration-thickness var(--dur-fast) var(--ease);
+}
+
+.p2-btn:hover { background: var(--ink-2); color: var(--paper); text-decoration: none; }
+
+.p2-btn--outline { background: transparent; color: var(--ink); }
+.p2-btn--outline:hover { background: var(--ink); color: var(--paper); }
+
+.p2-btn--inverse { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.p2-btn--inverse:hover { background: transparent; color: var(--paper); }
+
+.p2-btn--link {
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.p2-btn--link:hover { background: transparent; color: inherit; text-decoration-thickness: 2px; }
+.p2-btn .p2-arrow { font-variant: normal; }
+
+/* An acronym inside a button keeps its capitals, so the letters match the
+   height of any digits rather than being lowercased into small caps. */
+.p2-btn .p2-literal { text-transform: none; }
+
+/* ── StatRow (StatRow.jsx) ───────────────────────────────────────────────── */
+.p2-statrow {
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: repeat(var(--p2-stats, 4), minmax(0, 1fr));
+  border-top: var(--border-hair) solid var(--border-hair-color);
+  border-bottom: var(--border-hair) solid var(--border-hair-color);
+  padding: 20px 0;
+}
+
+.p2-stat {
+  min-width: 0;
+  padding: 0 var(--space-3) 0 var(--space-4);
+  border-left: var(--border-hair) solid var(--border-hair-color);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.p2-stat:first-child { padding-left: 0; border-left: none; }
+
+.p2-stat-value {
+  font-family: var(--font-display);
+  font-variation-settings: var(--display-variation);
+  font-weight: var(--weight-regular);
+  font-size: min(var(--text-stat), calc(100cqw / var(--p2-stats, 4) * 0.17));
+  line-height: 1;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.p2-stat-label {
+  font-style: italic;
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  color: var(--text-secondary);
+}
+
+/* ── CardGrid (CardGrid.jsx) · 1px gaps over grey-200, no card borders ───── */
+.p2-cardgrid {
+  display: grid;
+  grid-template-columns: repeat(var(--p2-cols, 2), minmax(0, 1fr));
+  gap: var(--border-hair);
+  background: var(--border-hair-color);
+  border: var(--border-hair) solid var(--border-hair-color);
+}
+
+.p2-card {
+  background: var(--surface-sheet);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.p2-card-title {
+  font-size: var(--text-h3);
+  font-weight: var(--weight-medium);
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+.p2-card-body {
+  font-size: var(--text-small);
+  line-height: var(--leading-small);
+  color: var(--text-secondary);
+}
+
+/* ── SheetFooter (SheetFooter.jsx) ───────────────────────────────────────── */
+.p2-sheetfooter {
+  border-top: var(--border-rule) solid var(--border-rule-color);
+  padding-top: var(--space-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-5);
+}
+
+.p2-sheetfooter-left {
+  font-variant: small-caps;
+  letter-spacing: var(--tracking-label);
+  font-size: var(--text-label);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.p2-sheetfooter-right {
+  font-style: italic;
+  font-size: var(--text-label);
+  color: var(--text-caption);
+  text-align: right;
+}
+
+/* ── Inputs ──────────────────────────────────────────────────────────────── */
+.p2-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.p2-input,
+.p2-select,
+.p2-textarea {
+  font: inherit;
+  font-size: var(--text-body);
+  color: var(--text-primary);
+  background: var(--white);
+  border: var(--border-hair) solid var(--border-input-color);
+  border-radius: var(--radius);
+  padding: 11px 14px;
+  width: 100%;
+  appearance: none;
+  outline: none;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+
+.p2-input:focus,
+.p2-select:focus,
+.p2-textarea:focus { border-color: var(--ink); }
+
+.p2-textarea { resize: vertical; min-height: 84px; }
+
+/* appearance:none strips the native dropdown affordance, so the select gets
+   the one glyph the system allows — the same arrow as "Start a conversation ↓". */
+.p2-select-wrap { position: relative; display: block; }
+
+.p2-select-wrap::after {
+  content: '↓';
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-label);
+  pointer-events: none;
+}
+
+.p2-select { padding-right: 36px; }
+
+/* ── Report column (ReportPage.jsx) ──────────────────────────────────────── */
+.p2-report {
+  max-width: var(--report-width);
+  margin: 0 auto;
+  padding: var(--space-7) var(--space-5) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.p2-report-masthead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-5);
+  border-bottom: var(--border-rule) solid var(--border-rule-color);
+  padding-bottom: 14px;
+}
+
+.p2-report-masthead .p2-wordmark { --p2-mark: 28px; }
+
+.p2-report-meta {
+  font-style: italic;
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  color: var(--text-caption);
+  text-align: right;
+}
+
+.p2-section {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.p2-report p {
+  margin: 0;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--text-secondary);
+}
+
+/* The dek keeps body-lg against the bare-paragraph rule above. */
+.p2-report .p2-dek { font-size: var(--text-body-lg); }
+
+.p2-prose {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.p2-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+/* A hair-ruled block, and its ink counterpart */
+.p2-block {
+  border: var(--border-hair) solid var(--border-hair-color);
+  padding: var(--space-5) 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.p2-block--inverse {
+  background: var(--surface-inverse);
+  border-color: var(--ink);
+}
+
+.p2-block--inverse .p2-h2,
+.p2-block--inverse .p2-card-title { color: var(--paper); }
+.p2-block--inverse p { color: var(--paper); }
+.p2-block--inverse a:not(.p2-btn) { color: var(--paper); }
+.p2-block--inverse .p2-divider { border-top-color: var(--inverse-rule); }
+
+.p2-divider {
+  border: none;
+  border-top: var(--border-hair) solid var(--border-hair-color);
+  margin: 0;
+}
+
+.p2-source {
+  font-style: italic;
+  font-size: var(--text-caption);
+  line-height: var(--leading-caption);
+  color: var(--text-caption);
+}
+
+.p2-source a { color: inherit; }
+
+/* ── Narrow widths ──────────────────────────────────────────────────────────
+   The web sheet is a centred 552px column; below that it goes edge to edge
+   and the band scales with the wordmark, keeping the frame intact. */
+@media (max-width: 600px) {
+  .p2-masthead { --p2-mark: 44px; height: 92px; }
+  .p2-sheet-body { padding: var(--space-5) var(--space-5) var(--space-6); }
+  .p2-callout { padding: var(--space-5) var(--space-5); }
+  .p2-two-col { grid-template-columns: 1fr; gap: var(--space-5); }
+  .p2-cardgrid { --p2-cols: 1; }
+  .p2-statrow { grid-template-columns: 1fr 1fr; row-gap: 20px; }
+  .p2-stat:nth-child(odd) { padding-left: 0; border-left: none; }
+  .p2-stat-value { font-size: min(var(--text-stat), calc(100cqw / 2 * 0.17)); }
+  .p2-block { padding: var(--space-5); }
+  .p2-report { padding: var(--space-6) var(--space-4) var(--space-7); }
+  .p2-sheetfooter,
+  .p2-report-masthead { gap: var(--space-4); }
+  .p2-masthead-meta { white-space: normal; }
+}
+
+@media (max-width: 480px) {
+  .p2-sheetfooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+  }
+  .p2-sheetfooter-right { text-align: left; }
+}
+
+@media (max-width: 400px) {
+  .p2-masthead { --p2-mark: 36px; height: 80px; }
+}
+
+/* ── Print ───────────────────────────────────────────────────────────────── */
+@media print {
+  .p2-report { padding: 28px; max-width: 100%; }
+  .p2-block, .p2-statrow, .p2-cardgrid, .p2-card { break-inside: avoid; }
+  .p2-callout--cta, .p2-no-print { display: none; }
+
+  /* The ink surfaces are the brand, not decoration: they have to print even
+     when the browser's "background graphics" option is off, or paper text
+     lands on white paper. */
+  .p2-masthead,
+  .p2-callout,
+  .p2-block--inverse,
+  .p2-btn,
+  .p2-cardgrid {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+/* ── Home sheet definition block (ui_kits/website/HomeSheet.jsx) ─────────── */
+.p2-defn-term {
+  font-size: 26px;
+  font-weight: var(--weight-semibold);
+  line-height: 1.2;
+  display: block;
+}
+
+.p2-defn-meta {
+  font-style: italic;
+  color: var(--text-secondary);
+  display: block;
+}
+
+.p2-lede {
+  margin: 0;
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
+  text-wrap: pretty;
+}
+
+.p2-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+@media (max-width: 400px) {
+  .p2-defn-term { font-size: 22px; }
+}

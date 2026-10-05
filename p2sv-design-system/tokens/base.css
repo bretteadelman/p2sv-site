@@ -1,0 +1,10 @@
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;background:var(--surface-page);color:var(--text-primary);font-family:var(--font-serif);font-size:var(--text-body);line-height:var(--leading-body);-webkit-font-smoothing:antialiased}
+::selection{background:var(--ink);color:var(--paper)}
+a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;transition:text-decoration-thickness var(--dur-fast) var(--ease)}
+a:hover{color:inherit;text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}
+.p2-display{font-family:var(--font-display);font-variation-settings:var(--display-variation);font-weight:400;line-height:var(--leading-display);letter-spacing:var(--tracking-display)}
+.p2-sc{font-family:var(--font-serif);font-variant:small-caps;font-size:var(--text-label);letter-spacing:var(--tracking-label);color:var(--text-label);text-transform:lowercase}
+.p2-caps{font-family:var(--font-serif);font-weight:600;font-size:var(--text-caps);letter-spacing:var(--tracking-caps);text-transform:uppercase}
+.p2-caption{font-family:var(--font-serif);font-style:italic;font-size:var(--text-caption);line-height:var(--leading-caption);color:var(--text-caption)}

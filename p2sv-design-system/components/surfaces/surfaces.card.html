@@ -1,0 +1,19 @@
+<!-- @dsCard group="Components" viewport="700x400" name="Surfaces" subtitle="Handout, TitleSlide, StatSlide, SectionSlide" -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{padding:24px}.k{font-family:var(--font-mono);font-size:11px;color:var(--grey-500);margin-bottom:8px}.sec{display:flex;flex-direction:column;gap:6px}</style></head><body><div id="root"></div>
+<script type="text/babel">
+const NS = window.P2SVDesignSystem_92a7d1;
+const { Handout, TitleSlide, StatSlide, SectionSlide } = NS;
+const Mini = ({w,h,s,children}) => <div style={{width:w*s,height:h*s,overflow:'hidden',flex:'none'}}><div style={{transform:'scale('+s+')',transformOrigin:'0 0'}}>{children}</div></div>;
+function App(){return <div style={{display:'flex',gap:16}}>
+<Mini w={816} h={1056} s={0.33}><Handout meta={<>Market Brief · Med Spa<br/>Los Angeles, CA</>} label="Market Context" fact="A $32B Market. 90% Independent." reframe="The Differentiator Is the Room." dek="The US med spa market is growing from $19B to $32B by 2027 — fragmented, cash-pay, and increasingly decided by a single factor: how the room feels." stats={[{value:'$32B',label:'US MedSpa TAM by 2027'},{value:'14.7%',label:'Market CAGR 2023–2027'},{value:'90%',label:'Independently owned'},{value:'$536',label:'Avg. spend per visit'}]} gridLabel="Tailwinds" grid={[{title:'Aging Population',body:'Restorative treatments on top of preventative routines.'},{title:'Cultural Acceptance',body:'Procedures that were "secret" are now social currency.'},{title:'GLP-1 / Ozempic Effect',body:'New demand for skin tightening and body contouring.'},{title:'Zoom & Appearance',body:'Appearance consciousness is now baseline.'},{title:'Social Media Loop',body:'Content drives visits; visits drive content.'},{title:'Skintellectual Demand',body:'Consumers arrive educated.'}]} positioning="P2SV partners with independent med spa operators competing on experience, not scale." source="Source: Solomon Partners MedSpa Market Overview, Q2 2024" /></Mini>
+<div style={{display:'flex',flexDirection:'column',gap:10}}>
+<Mini w={1920} h={1080} s={0.19}><TitleSlide eyebrow="Market Brief · Med Spa" fact="A $32B Market. 90% Independent." reframe="The Differentiator Is the Room." footer="Med Spa Market Brief · Los Angeles, CA · 2026" /></Mini>
+<Mini w={1920} h={1080} s={0.19}><SectionSlide number="02" title="Tailwinds" kicker="Six forces behind demand" /></Mini>
+</div></div>}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script></body></html>

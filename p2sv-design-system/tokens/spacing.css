@@ -1,0 +1,17 @@
+:root{
+--space-1:4px;--space-2:8px;--space-3:12px;--space-4:16px;--space-5:24px;--space-6:36px;--space-7:48px;--space-8:72px;--space-9:96px;
+--radius:0px;--shadow-none:none;
+/* frames, bands, rules */
+--border-frame:10px;--border-frame-print:14px;--border-frame-slide:20px;--border-rule:1.5px;--border-hair:1px;
+--band-height:128px;--band-height-print:132px;--band-height-slide:260px;
+/* sizes */
+--sheet-width:552px;--report-width:590px;--measure:66ch;
+--slide-margin:96px;--slide-footer-inset:48px;
+/* motion — colour and background only; nothing moves or scales */
+--dur-fast:120ms; /* @kind other */
+--dur:200ms; /* @kind other */
+--ease:cubic-bezier(.2,.7,.2,1); /* @kind other */
+/* textures — the only "gradients" allowed */
+--hatch:repeating-linear-gradient(135deg,var(--ink) 0 1px,transparent 1px 6px);
+--hatch-light:repeating-linear-gradient(135deg,var(--grey-300) 0 1px,transparent 1px 8px);
+}

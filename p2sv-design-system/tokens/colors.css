@@ -1,0 +1,16 @@
+:root{
+/* base — strictly monochrome, warm greys sampled from pushtostart.ventures */
+--ink:#111111;--ink-2:#2b2b2a;--paper:#fafaf8;--white:#ffffff;
+--grey-700:#555553;--grey-500:#6e6e6b;--grey-400:#8a8a87;--grey-300:#bdbdba;--grey-200:#dededa;--grey-100:#ededea;
+--inverse-muted:#9a9a97;--inverse-rule:#3a3a38;
+/* text */
+--text-primary:var(--ink);--text-secondary:var(--grey-700);--text-label:var(--grey-500);--text-caption:var(--grey-500);--text-decorative:var(--grey-400);
+--text-inverse:var(--paper);--text-inverse-muted:var(--inverse-muted);
+/* surface */
+--surface-page:var(--paper);--surface-sheet:var(--white);--surface-inverse:var(--ink);--surface-sunken:var(--grey-100);
+/* border colours */
+--border-frame-color:var(--ink);--border-rule-color:var(--ink);--border-hair-color:var(--grey-200);--border-input-color:var(--grey-200);
+--focus-ring:var(--ink);
+/* data — no colour in charts, ever */
+--data-1:var(--ink);--data-2:var(--grey-500);--data-3:var(--grey-200);
+}

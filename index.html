@@ -13,9 +13,14 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Push to Start Ventures — Health &amp; Wellness Technology Studio" />
   <meta name="twitter:description" content="P2SV is a health and wellness technology studio. We build, launch, and operate science-powered ventures at the intersection of clinical rigor and consumer experience. Based in Los Angeles." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+  <meta name="theme-color" content="#111111" />
+
+  <!-- P2SV design system: self-hosted faces, preloaded so the band and body
+       never fall back to Arial / Times. -->
+  <link rel="preload" href="/assets/fonts/EBGaramond-latin-wght.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/ClimateCrisis-Regular-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/css/p2sv.css" />
+  <link rel="stylesheet" href="/assets/css/site.css" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -44,168 +49,61 @@
       person_profiles: 'identified_only',
     });
   </script>
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    html {
-      font-size: 17px;
-      -webkit-font-smoothing: antialiased;
-    }
-    body {
-      font-family: 'EB Garamond', Georgia, serif;
-      background: #ffffff;
-      color: #111111;
-      padding: 0;
-      max-width: 620px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
-    @media (min-width: 640px) {
-      body {
-        padding: 2rem;
-      }
-    }
-    .page-frame {
-      border: 10px solid #111111;
-    }
-    h1 {
-      font-family: 'Climate Crisis', sans-serif;
-      font-size: clamp(2rem, 12vw, 4.5rem);
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      line-height: 1;
-      background: #111111;
-      color: #ffffff;
-      padding: 1.25rem 1.5rem;
-      margin: 0;
-    }
-    .page-content {
-      padding: 2.5rem 2rem 2.5rem;
-    }
-    .definition-term {
-      font-weight: 600;
-      font-size: 1.1rem;
-      display: block;
-    }
-    .definition-meta {
-      font-style: italic;
-      color: #777;
-      font-size: 0.9rem;
-      display: block;
-      margin-bottom: 0.6rem;
-    }
-    .definition-body {
-      margin-bottom: 1.75rem;
-      color: #111;
-      font-size: 1.05rem;
-    }
-    .credentials {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 2rem;
-    }
-    .credentials li {
-      margin-bottom: 0.5rem;
-      position: relative;
-      padding-left: 1.2rem;
-    }
-    .credentials li::before {
-      content: "—";
-      position: absolute;
-      left: 0;
-      color: #999;
-    }
-    .section-label {
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.75rem;
-      color: #555;
-    }
-    a {
-      color: #111;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      transition: opacity 0.2s;
-    }
-    a:hover {
-      opacity: 0.6;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #eee;
-      margin: 2.5rem 0 1.75rem 0;
-    }
-    footer {
-      color: #999;
-      font-size: 0.85rem;
-      font-style: italic;
-    }
-    /* ── INVERTED REPORTS BLOCK ───────── */
-    .reports-block {
-      background: #111111;
-      padding: 1.75rem 1.5rem;
-      margin: 2.5rem 0;
-    }
-    .reports-block .section-label {
-      color: rgba(255,255,255,0.5);
-      margin-bottom: 0.75rem;
-    }
-    .reports-block .credentials {
-      margin-bottom: 0;
-    }
-    .reports-block .credentials li {
-      color: #ffffff;
-    }
-    .reports-block .credentials li::before {
-      color: rgba(255,255,255,0.4);
-    }
-    .reports-block a {
-      color: #ffffff;
-      text-decoration-color: rgba(255,255,255,0.35);
-    }
-    .reports-block a:hover {
-      opacity: 0.7;
-    }
-  </style>
 </head>
-<body>
-<div class="page-frame">
-  <h1>P2SV</h1>
-  <div class="page-content">
-  <p>
-    <span class="definition-term">Push to Start Ventures</span>
-    <span class="definition-meta">/pʊʃ tə stɑːrt ˈvɛntʃərz/ · venture studio</span>
-  </p>
+<body class="p2-canvas">
 
-  <p class="definition-body">
-    A health and wellness venture studio. Developing and commercializing science-backed products and services for people and patients.
-  </p>
-  <p class="section-label">The Studio</p>
-  <ul class="credentials">
-    <li>16 years of healthcare domain expertise across payer strategy, health system partnerships, and clinical operations.</li>
-    <li>A builder-operator model: every venture is designed, built, launched, and run under one roof, with no handoffs.</li>
-    <li>Ventures informed by real clinical trials and large-scale health system relationships, not wellness industry speculation.</li>
-    <li>Built at the convergence of pharma, digital health, and consumer wellness, where defensible advantages form.</li>
-  </ul>
-  <p class="section-label">Contact</p>
-  <ul class="credentials">
-    <li><a href="mailto:brett@pushtostart.ventures">Partnerships:</a> clinical, wellness, and infusion clinics</li>
-    <li><a href="mailto:brett@pushtostart.ventures">Inquiries:</a> general outreach</li>
-  </ul>
-  <div class="reports-block">
-    <p class="section-label">Key Reports</p>
-    <ul class="credentials">
-      <li><a href='/medspa-market-brief'>Med Spa Market Brief:</a> US market overview, growth dynamics, and competitive landscape</li>
-    </ul>
-  </div>
-  <footer>Founded and operating in Los Angeles, California</footer>
+<div class="p2-sheet">
+
+  <!-- MASTHEAD · the frame thickened, wordmark bottom-left -->
+  <header class="p2-masthead">
+    <span class="p2-wordmark p2-wordmark--inverse">P2SV</span>
+    <div class="p2-masthead-meta">Venture studio<br />Los Angeles, CA</div>
+  </header>
+
+  <div class="p2-sheet-body">
+
+    <div>
+      <span class="p2-defn-term">Push to Start Ventures</span>
+      <span class="p2-defn-meta">/pʊʃ tə stɑːrt ˈvɛntʃərz/ · venture studio</span>
+    </div>
+
+    <p class="p2-lede">
+      A health and wellness venture studio. Developing and commercializing science-backed products and services for people and patients.
+    </p>
+
+    <section class="p2-group">
+      <h2 class="p2-label p2-label--caps">The Studio</h2>
+      <ul class="p2-list">
+        <li>16 years of healthcare domain expertise across payer strategy, health system partnerships, and clinical operations.</li>
+        <li>A builder-operator model: every venture is designed, built, launched, and run under one roof, with no handoffs.</li>
+        <li>Ventures informed by real clinical trials and large-scale health system relationships, not wellness industry speculation.</li>
+        <li>Built at the convergence of pharma, digital health, and consumer wellness, where defensible advantages form.</li>
+      </ul>
+    </section>
+
+    <section class="p2-group" id="contact">
+      <h2 class="p2-label p2-label--caps">Contact</h2>
+      <ul class="p2-list">
+        <li><a href="mailto:brett@pushtostart.ventures">Partnerships:</a> clinical, wellness, and infusion clinics</li>
+        <li><a href="mailto:brett@pushtostart.ventures">Inquiries:</a> general outreach</li>
+      </ul>
+    </section>
+
+    <!-- KEY REPORTS · Callout, ink surface -->
+    <section class="p2-callout">
+      <h2 class="p2-label p2-label--caps p2-label--inverse">Key Reports</h2>
+      <ul class="p2-list p2-list--inverse">
+        <li><a href="/medspa-market-brief">Med Spa Market Brief:</a> US market overview, growth dynamics, and competitive landscape</li>
+      </ul>
+    </section>
+
+    <footer class="p2-sheetfooter">
+      <span class="p2-sheetfooter-left">P2SV — Push to Start Ventures</span>
+      <span class="p2-sheetfooter-right">Founded and operating in Los Angeles, California</span>
+    </footer>
+
   </div>
 </div>
+
 </body>
 </html>

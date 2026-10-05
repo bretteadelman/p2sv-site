@@ -1,0 +1,16 @@
+:root{
+--font-display:'Climate Crisis',Impact,'Arial Black',sans-serif;
+--font-serif:'EB Garamond',Garamond,'Times New Roman',serif;
+--font-report:var(--font-serif);
+--font-mono:ui-monospace,'SF Mono',Menlo,monospace;
+--display-variation:"YEAR" 1979; /* @kind font */
+/* scale */
+--text-display-xl:120px;--text-wordmark:80px;--text-display:64px;--text-h1:32px;--text-stat:30px;--text-h2:22px;
+--text-body-lg:18px;--text-h3:17px;--text-body:16px;--text-caps:15px;--text-small:14px;--text-caption:14px;--text-label:13px;
+/* leading */
+--leading-display:0.9;--leading-heading:1.18;--leading-body:1.7;--leading-small:1.5;--leading-caption:1.4;
+/* tracking */
+--tracking-label:0.12em;--tracking-caps:0.06em;--tracking-display:-0.01em;
+/* weights */
+--weight-regular:400;--weight-medium:500;--weight-semibold:600;
+}

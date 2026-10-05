@@ -1,0 +1,10 @@
+# OS
+.DS_Store
+
+# Claude Code local tooling (session state, worktrees) — not site content
+.claude/
+.agents/
+
+# Design system was supplied as a zip; the unpacked p2sv-design-system/ is
+# what's tracked and referenced from CLAUDE.md
+p2sv-design-system-claude.zip
