@@ -1,10 +1,10 @@
 # Push to Start Ventures (P2SV)
 
-> P2SV is a health and wellness venture studio based in Los Angeles that takes ventures from 0 to 1 — building the infrastructure, brand, messaging, and direct-to-consumer go-to-market a venture needs to reach commercial readiness. It designs, builds, launches, and operates its portfolio companies directly: a builder-operator model, not a fund and not an accelerator. Backed by 19 years of healthcare domain expertise in payer strategy, health system partnerships, and clinical operations.
+> P2SV is a health and wellness venture studio based in Los Angeles that takes ventures from 0 to 1, or 1 to 100. It designs, builds, launches, and operates its portfolio companies directly: a builder-operator model, not a fund and not an accelerator. Backed by 16 years of healthcare domain expertise in payer strategy, health system partnerships, and clinical operations.
 
 ## Studio
 
-- [Homepage](https://pushtostart.ventures/): What P2SV is, what it builds (0 to 1 product and technical infrastructure; brand, messaging, and D2C go-to-market), studio credentials, an FAQ, and contact routes for partnerships, investors, and general inquiries.
+- [Homepage](https://pushtostart.ventures/): What P2SV is, studio credentials, and contact routes for partnerships, investors, and general inquiries.
 
 ## Reports
 
