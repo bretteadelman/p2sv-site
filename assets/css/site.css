@@ -585,3 +585,23 @@ a.p2-wordmark:hover { text-decoration: none; }
 @media (max-width: 400px) {
   .p2-defn-term { font-size: 22px; }
 }
+
+/* ── FAQ · visible Q&A, mirrored by FAQPage schema on the homepage ──────── */
+.p2-faq {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.p2-faq-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.p2-faq-item p {
+  margin: 0;
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  color: var(--text-secondary);
+}
