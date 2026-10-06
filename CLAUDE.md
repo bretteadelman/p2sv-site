@@ -79,5 +79,25 @@ Then render both pages at 1200px and at 360px, and print the brief to PDF, befor
 - **Contact routes**: Founders, Partnerships, Investors (general Inquiries
   removed), mirrored in the JSON-LD contactPoints and `llms.txt`.
 - **Large-screen sizing**: home page at 1.5x from 1400px.
+- **Med Spa brief restyled** (Oct 5, 2026):
+  - Report now sits on the framed sheet with the ink header band, like the
+    home page (`.p2-sheet--report`).
+  - Sections numbered 01–04 in the display face (`.p2-label--num`).
+  - US Med Spa Locations bar chart (2018 / 2023 / 2027 proj., hatched) under
+    Market Overview (`.p2-barchart`). 2018 = 4,800 comes from the design
+    system's sample data; verify against Solomon Partners if challenged.
+  - GLP-1 / Ozempic Effect card on ink (`.p2-card--inverse`).
+  - Peptides is a feature section (`.p2-feature`): ink band head, "Clinical
+    Benefits of Peptides" over five numbered cards (Anti-Aging and Longevity
+    on ink, Hormonal Regulation full width), then a "Why Now?" ink callout
+    (`.p2-callout--feature`) replacing the old Pharma to Aesthetics card.
+  - Competitive Landscape trimmed: headline "9 in 10 med spas are
+    independently owned.", one paragraph, "Key Features of Successful Med
+    Spas" with four short bullets; its CTA button removed.
+  - Fixes: card grids go to one column on phones (the inline `--p2-cols`
+    used to win); printed card grids use borders so page breaks don't leave
+    grey blocks.
+  - A graphics-heavy rework of Competitive Landscape (ownership bar, PE vs
+    founder-led panel) was tried and rejected; don't reintroduce it.
 - **Flexible-model positioning**: new tagline, new Studio bullets, and the
   meta, JSON-LD and `llms.txt` descriptions brought in line.

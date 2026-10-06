@@ -543,6 +543,118 @@ a.p2-wordmark:hover { text-decoration: none; }
 
 .p2-source a { color: inherit; }
 
+/* ── Report on a framed sheet · same frame and band as the home sheet, at the
+   report column width (590px) plus the sheet's side padding. ───────────── */
+.p2-sheet--report { max-width: calc(var(--report-width) + 2 * var(--space-7)); }
+.p2-sheet--report .p2-report { max-width: none; padding: var(--space-6) var(--space-7) var(--space-7); }
+
+/* ── Numbered section labels · two-digit display numerals (List.jsx) ─────── */
+.p2-label--num {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+}
+.p2-num {
+  font-family: var(--font-display);
+  font-variation-settings: var(--display-variation);
+  font-variant: normal;
+  text-transform: none;
+  font-size: 20px;
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--text-primary);
+}
+.p2-label--inverse .p2-num { color: var(--paper); }
+
+/* ── BarChart (BarChart.jsx) · no colour; projections hatched, ink outline ── */
+.p2-barchart { margin: var(--space-5) 0 0; display: flex; flex-direction: column; }
+.p2-bar-row {
+  display: grid;
+  grid-template-columns: 80px 1fr 72px;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-2) 0;
+  border-bottom: var(--border-hair) solid var(--border-hair-color);
+}
+.p2-bar-label { font-size: 15px; }
+.p2-bar-value { text-align: right; font-size: var(--text-h3); }
+.p2-bar { height: 22px; width: var(--p2-v); background: var(--data-1); }
+.p2-bar--comparison { background: var(--data-2); }
+.p2-bar--projected { background: var(--hatch); border: var(--border-hair) solid var(--ink); }
+.p2-barchart .p2-source { margin-top: var(--space-3); }
+.p2-chart-title {
+  margin: 0 0 var(--space-2);
+  font-weight: var(--weight-regular);
+  font-size: var(--text-h2);
+  line-height: var(--leading-heading);
+  color: var(--text-primary);
+}
+
+/* ── Ink card · one emphasised cell inside a CardGrid ─────────────────────── */
+.p2-card--inverse { background: var(--surface-inverse); }
+.p2-card--wide { grid-column: 1 / -1; }
+
+/* Feature callout · an ink panel led by a short display-face statement */
+.p2-callout--feature { padding: var(--space-6) var(--space-7); gap: var(--space-4); }
+.p2-callout-title {
+  font-family: var(--font-display);
+  font-variation-settings: var(--display-variation);
+  font-size: 44px;
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+  color: var(--paper);
+}
+.p2-report .p2-callout-body {
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
+  color: var(--paper);
+  max-width: 52ch;
+}
+.p2-card--inverse .p2-card-title { color: var(--paper); }
+.p2-card--inverse .p2-card-body { color: var(--text-inverse-muted); }
+
+/* Numbered cards: display numerals 01, 02 … above each title */
+.p2-cardgrid--numbered { counter-reset: p2-card; }
+.p2-cardgrid--numbered .p2-card { counter-increment: p2-card; }
+.p2-cardgrid--numbered .p2-card::before {
+  content: counter(p2-card, decimal-leading-zero);
+  font-family: var(--font-display);
+  font-variation-settings: var(--display-variation);
+  font-size: 20px;
+  line-height: 1;
+  color: var(--text-decorative);
+  margin-bottom: var(--space-1);
+}
+.p2-cardgrid--numbered .p2-card--inverse::before { color: var(--inverse-muted); }
+
+/* ── Feature section · an ink band heading a rule-bordered body. The band is
+   the frame-thickened masthead idea applied to one section, so the feature
+   reads as its own surface without adding a second frame. ──────────────── */
+.p2-feature { border: var(--border-rule) solid var(--border-rule-color); }
+.p2-feature-head {
+  background: var(--surface-inverse);
+  color: var(--paper);
+  padding: var(--space-5) 28px var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+.p2-feature-title {
+  margin: 0;
+  font-weight: var(--weight-regular);
+  font-size: var(--text-h1);
+  line-height: var(--leading-heading);
+  color: var(--paper);
+  text-wrap: balance;
+}
+.p2-feature-title em { font-style: italic; color: var(--text-inverse-muted); }
+.p2-feature-body {
+  padding: var(--space-5) 28px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
 /* ── Narrow widths ──────────────────────────────────────────────────────────
    The web sheet is a centred 552px column; below that it goes edge to edge
    and the band scales with the wordmark, keeping the frame intact. */
@@ -551,11 +663,17 @@ a.p2-wordmark:hover { text-decoration: none; }
   .p2-sheet-body { padding: var(--space-5) var(--space-5) var(--space-6); }
   .p2-callout { padding: var(--space-5) var(--space-5); }
   .p2-two-col { grid-template-columns: 1fr; gap: var(--space-5); }
-  .p2-cardgrid { --p2-cols: 1; }
+  .p2-cardgrid { grid-template-columns: 1fr; } /* beats the inline --p2-cols */
   .p2-statrow { grid-template-columns: 1fr 1fr; row-gap: 20px; }
   .p2-stat:nth-child(odd) { padding-left: 0; border-left: none; }
   .p2-stat-value { font-size: min(var(--text-stat), calc(100cqw / 2 * 0.17)); }
   .p2-block { padding: var(--space-5); }
+  .p2-feature-head,
+  .p2-feature-body { padding-left: var(--space-5); padding-right: var(--space-5); }
+  .p2-callout--feature { padding: var(--space-5); }
+  .p2-callout-title { font-size: 34px; }
+  .p2-sheet--report .p2-report { padding: var(--space-5) var(--space-5) var(--space-6); }
+  .p2-bar-row { grid-template-columns: 64px 1fr 60px; gap: var(--space-3); }
   .p2-report { padding: var(--space-6) var(--space-4) var(--space-7); }
   .p2-sheetfooter,
   .p2-report-masthead { gap: var(--space-4); }
@@ -578,7 +696,13 @@ a.p2-wordmark:hover { text-decoration: none; }
 /* ── Print ───────────────────────────────────────────────────────────────── */
 @media print {
   .p2-report { padding: 28px; max-width: 100%; }
-  .p2-block, .p2-statrow, .p2-cardgrid, .p2-card { break-inside: avoid; }
+  .p2-block, .p2-statrow, .p2-card, .p2-barchart, .p2-feature-head, .p2-callout--feature { break-inside: avoid; }
+  .p2-sheet--report { border: none; max-width: 100%; }
+  /* Hairlines as borders, not a grey grid background, so a grid that breaks
+     across pages doesn't leave a grey slab where the moved cards were. */
+  .p2-cardgrid { background: none; gap: 0; border-width: var(--border-hair) 0 0 var(--border-hair); }
+  .p2-card { border-right: var(--border-hair) solid var(--border-hair-color); border-bottom: var(--border-hair) solid var(--border-hair-color); }
+  .p2-sheet--report .p2-report { padding: 28px 0 0; }
   .p2-callout--cta, .p2-no-print { display: none; }
   .p2-canvas--photo { background: none; min-height: 0; padding: 0; display: block; }
 
@@ -588,8 +712,10 @@ a.p2-wordmark:hover { text-decoration: none; }
   .p2-masthead,
   .p2-callout,
   .p2-block--inverse,
-  .p2-btn,
-  .p2-cardgrid {
+  .p2-card--inverse,
+  .p2-feature-head,
+  .p2-bar,
+  .p2-btn {
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }

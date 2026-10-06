@@ -66,18 +66,17 @@
     });
   </script>
 </head>
-<body>
+<body class="p2-canvas">
+
+<div class="p2-sheet p2-sheet--report">
+
+  <!-- MASTHEAD · the frame thickened, wordmark bottom-left -->
+  <header class="p2-masthead">
+    <a href="/" class="p2-wordmark p2-wordmark--inverse">P2SV</a>
+    <div class="p2-masthead-meta">Market Brief · Med Spa<br />Los Angeles, CA</div>
+  </header>
 
 <article class="p2-report">
-
-  <!-- MASTHEAD -->
-  <header class="p2-report-masthead">
-    <a href="/" class="p2-wordmark">P2SV</a>
-    <div class="p2-report-meta">
-      Market Brief · Med Spa<br />
-      Los Angeles, CA
-    </div>
-  </header>
 
   <!-- HEADLINE · two beats, the second in italic -->
   <div class="p2-headline">
@@ -110,7 +109,7 @@
 
   <!-- MARKET OVERVIEW -->
   <section class="p2-section">
-    <div class="p2-label p2-label--rule">Market Overview</div>
+    <div class="p2-label p2-label--rule p2-label--num"><span class="p2-num">01</span>Market Overview</div>
     <div class="p2-two-col">
       <div class="p2-group">
         <h2 class="p2-h2">Scale &amp; Momentum</h2>
@@ -133,11 +132,30 @@
         </ul>
       </div>
     </div>
+    <figure class="p2-barchart">
+      <h3 class="p2-chart-title">US Med Spa Locations</h3>
+      <div class="p2-bar-row">
+        <div class="p2-bar-label">2018</div>
+        <div class="p2-bar-track"><div class="p2-bar p2-bar--comparison" style="--p2-v:40%;"></div></div>
+        <div class="p2-bar-value">4,800</div>
+      </div>
+      <div class="p2-bar-row">
+        <div class="p2-bar-label">2023</div>
+        <div class="p2-bar-track"><div class="p2-bar" style="--p2-v:78.3%;"></div></div>
+        <div class="p2-bar-value">9,400</div>
+      </div>
+      <div class="p2-bar-row">
+        <div class="p2-bar-label">2027 proj.</div>
+        <div class="p2-bar-track"><div class="p2-bar p2-bar--projected" style="--p2-v:100%;"></div></div>
+        <div class="p2-bar-value">12,000</div>
+      </div>
+      <figcaption class="p2-source">Source: Solomon Partners, Q2 2024.</figcaption>
+    </figure>
   </section>
 
   <!-- MACRO TAILWINDS -->
   <section class="p2-section">
-    <div class="p2-label p2-label--rule">Tailwinds</div>
+    <div class="p2-label p2-label--rule p2-label--num"><span class="p2-num">02</span>Tailwinds</div>
     <h2 class="p2-h2">The Tailwinds Are Structural, <em>Not Cyclical.</em></h2>
     <div class="p2-cardgrid" style="--p2-cols:2;">
       <div class="p2-card">
@@ -152,7 +170,7 @@
         <div class="p2-card-title">Cultural Acceptance</div>
         <div class="p2-card-body">Destigmatization across gender and age cohorts. Procedures that were &ldquo;secret&rdquo; are now social currency.</div>
       </div>
-      <div class="p2-card">
+      <div class="p2-card p2-card--inverse">
         <div class="p2-card-title">GLP-1 / Ozempic Effect</div>
         <div class="p2-card-body">Rapid weight-loss drugs creating downstream demand for skin tightening and body contouring — new patient journeys entering the funnel.</div>
       </div>
@@ -173,15 +191,19 @@
     <a href="#contact" class="p2-btn p2-btn--link">Start a conversation <span class="p2-arrow">↓</span></a>
   </div>
 
-  <!-- EMERGING SCIENCE -->
-  <section class="p2-section">
-    <div class="p2-label p2-label--rule">Emerging Science</div>
-    <h2 class="p2-h2">Peptides: <em>From Pharmaceutical Labs to Aesthetic Practice.</em></h2>
+  <!-- EMERGING SCIENCE · feature: ink band head over a ruled body -->
+  <section class="p2-feature">
+    <header class="p2-feature-head">
+      <div class="p2-label p2-label--rule p2-label--inverse p2-label--num"><span class="p2-num">03</span>Emerging Science</div>
+      <h2 class="p2-feature-title">Peptides<br /><em>From Pharmaceutical Labs to Aesthetic Practice.</em></h2>
+    </header>
+    <div class="p2-feature-body">
     <div class="p2-prose">
       <p>Peptides — short chains of 2 to 50 amino acids — are foundational to how the human body regulates itself. Once confined to pharmaceutical research, they are now one of the fastest-growing categories in aesthetic medicine, backed by decades of clinical data and an accelerating pipeline of therapeutic applications.</p>
       <p>Peptides govern virtually every physiological process: they regulate metabolic homeostasis, modulate inflammation, support wound healing, defend against pathogens, and serve as the body&rsquo;s primary signaling molecules. That biological specificity is what makes them compelling for aesthetic use — they communicate with skin at a cellular level rather than acting on the surface.</p>
     </div>
-    <div class="p2-cardgrid" style="--p2-cols:2;">
+    <h3 class="p2-h2">Clinical Benefits of Peptides</h3>
+    <div class="p2-cardgrid p2-cardgrid--numbered" style="--p2-cols:2;">
       <div class="p2-card">
         <div class="p2-card-title">Collagen &amp; Wound Repair</div>
         <div class="p2-card-body">Peptides support mesenchymal cell differentiation and wound healing — the same mechanism that drives collagen-stimulating aesthetic treatments.</div>
@@ -190,46 +212,43 @@
         <div class="p2-card-title">Anti-Inflammatory Action</div>
         <div class="p2-card-body">Antimicrobial and anti-inflammatory peptides play documented roles in conditions like rosacea and atopic dermatitis — increasingly relevant as med spas expand into skin health.</div>
       </div>
-      <div class="p2-card">
-        <div class="p2-card-title">Antioxidant Properties</div>
+      <div class="p2-card p2-card--inverse">
+        <div class="p2-card-title">Anti-Aging and Longevity</div>
         <div class="p2-card-body">Bioactive peptides exhibit antioxidant capabilities that protect against cellular degradation — a key mechanism in anti-aging and skin longevity protocols.</div>
       </div>
       <div class="p2-card">
         <div class="p2-card-title">Precision Targeting</div>
         <div class="p2-card-body">Synthetic peptides can be designed to target specific receptors with high specificity — enabling therapeutic precision that broad-spectrum topicals cannot match.</div>
       </div>
-      <div class="p2-card">
+      <div class="p2-card p2-card--wide">
         <div class="p2-card-title">Hormonal Regulation</div>
         <div class="p2-card-body">Peptide hormones (insulin, oxytocin, natriuretic peptides) demonstrate how this class of molecules governs systemic health — underscoring the legitimacy of peptide-based wellness protocols.</div>
       </div>
-      <div class="p2-card">
-        <div class="p2-card-title">Pharma to Aesthetics Pipeline</div>
-        <div class="p2-card-body">The pharmaceutical industry&rsquo;s accelerating shift toward peptide biologics as novel drug candidates is validating and expanding the science available to aesthetic practitioners.</div>
-      </div>
     </div>
-    <hr class="p2-divider" />
+    <aside class="p2-callout p2-callout--feature">
+      <div class="p2-callout-title">Why Now?</div>
+      <p class="p2-callout-body">The pharmaceutical industry&rsquo;s accelerating shift toward peptide biologics as novel drug candidates is validating and expanding the science available to aesthetic practitioners.</p>
+    </aside>
     <p>The &ldquo;skintellectual&rdquo; consumer — arriving educated and demanding evidence-based protocols — is driving med spas to offer peptide-based treatments as a differentiator. Operators who can speak fluently to the science are building a new category of trust-based loyalty that transactional providers cannot replicate.</p>
     <div class="p2-source"><a href="https://www.ncbi.nlm.nih.gov/books/NBK562260/" target="_blank" rel="noopener">Source: Peptides, NCBI Bookshelf (NBK562260).</a></div>
+    </div>
   </section>
 
   <!-- COMPETITIVE LANDSCAPE · ink surface -->
   <section class="p2-block p2-block--inverse">
-    <div class="p2-label p2-label--rule p2-label--inverse">Competitive Landscape</div>
-    <h2 class="p2-h2">The 90% Who Compete on<br /><em>Experience, Not Scale.</em></h2>
+    <div class="p2-label p2-label--rule p2-label--inverse p2-label--num"><span class="p2-num">04</span>Competitive Landscape</div>
+    <h2 class="p2-h2">9 in 10 med spas are independently owned.</h2>
     <div class="p2-prose">
-      <p>Nine in ten med spas are still independently owned. Private equity has been aggressive — 15+ platform acquisitions in 2023 alone — but the vast majority of the market remains founder-led. These operators compete on quality, service breadth, and social presence. They cannot out-spend PE platforms on equipment or marketing.</p>
-      <p>Their edge is the room itself. How it feels to be in it. The ambient sensory environment is the one experience layer that is low-cost to implement, invisible to PE playbooks, and emotionally memorable enough to drive word-of-mouth.</p>
+      <p>Private equity has been aggressive — 15+ platform acquisitions in 2023 alone — but the vast majority of the market remains founder-led. These operators compete on quality, service breadth, and social presence. They cannot out-spend PE platforms on equipment or marketing.</p>
     </div>
     <hr class="p2-divider" />
+    <h3 class="p2-h2">Key Features of Successful Med Spas</h3>
     <ul class="p2-list p2-list--dot p2-list--inverse">
-      <li>Patient experience is a primary value-defining theme flagged by PE investors — it applies equally to independents</li>
-      <li>Tech-enabled solutions explicitly cited as a driver of traffic, referrals, and revenue per Solomon Partners</li>
-      <li>Loyalty and recurring revenue are top-of-mind investor metrics for high-performing independents</li>
-      <li>Diversifying revenue beyond procedures is a key differentiation strategy for high-performing independents</li>
+      <li>A standout patient experience</li>
+      <li>Tech that drives traffic, referrals, and revenue</li>
+      <li>Loyalty and recurring revenue</li>
+      <li>Revenue beyond procedures</li>
     </ul>
-    <div>
-      <a href="#contact" class="p2-btn p2-btn--inverse">Talk to <span class="p2-literal">P2SV</span> About Your Practice</a>
-    </div>
   </section>
 
   <!-- CONTACT -->
@@ -275,6 +294,7 @@
   </footer>
 
 </article>
+</div>
 
   <script>
     (function () {
