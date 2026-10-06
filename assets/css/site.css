@@ -552,6 +552,11 @@ a.p2-wordmark:hover { text-decoration: none; }
 .p2-sheet--report { max-width: calc(var(--report-width) + 2 * var(--space-7)); }
 .p2-sheet--report .p2-report { max-width: none; padding: var(--space-6) var(--space-7) var(--space-7); }
 
+/* Unframed report (med spa brief) · no ink frame down the sides; the band
+   alone heads the page as a solid black header, so the cards, blocks and
+   feature borders below aren't boxed in by a second set of verticals. */
+.p2-sheet--unframed { border: none; }
+
 /* ── Numbered section labels · two-digit display numerals (List.jsx) ─────── */
 .p2-label--num {
   display: flex;

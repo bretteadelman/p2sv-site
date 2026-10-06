@@ -121,3 +121,6 @@ Then render both pages at 1200px and at 360px, and print the brief to PDF, befor
   brief and legal pages use `.p2-label--heading` (22px, regular, title case)
   beside the display numerals. Report pages keep a 16px/12px gutter on
   phones so the frame doesn't touch the screen edge.
+- **Brief unframed** (Oct 6, 2026): the med spa brief drops the 10px side
+  frame (`.p2-sheet--unframed`); the black band alone heads the page. The
+  legal pages keep the full frame.
