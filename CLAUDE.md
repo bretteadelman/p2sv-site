@@ -83,9 +83,10 @@ Then render both pages at 1200px and at 360px, and print the brief to PDF, befor
   - Report now sits on the framed sheet with the ink header band, like the
     home page (`.p2-sheet--report`).
   - Sections numbered 01–04 in the display face (`.p2-label--num`).
-  - US Med Spa Locations bar chart (2018 / 2023 / 2027 proj., hatched) under
-    Market Overview (`.p2-barchart`). 2018 = 4,800 comes from the design
-    system's sample data; verify against Solomon Partners if challenged.
+  - US Med Spa Locations bar chart: built, then taken off the page until the
+    data is verified (the 2018 = 4,800 figure came from the design system's
+    sample data). The `.p2-barchart` CSS is kept in `site.css`; restore the
+    markup from commit acc8c16 once the numbers check out.
   - GLP-1 / Ozempic Effect card on ink (`.p2-card--inverse`).
   - Peptides is a feature section (`.p2-feature`): ink band head, "Clinical
     Benefits of Peptides" over five numbered cards (Anti-Aging and Longevity
