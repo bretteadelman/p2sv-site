@@ -34,8 +34,12 @@
 }
 .p2-canvas--photo .p2-sheet { width: 100%; }
 
+/* On a phone the plate is scaled to 150% of the page height and centred:
+   that crops off the plate's lettering along the top edge and enlarges the
+   figure, which softens it into a backdrop. No CSS blur (the system has none);
+   the softness is just the 1088px file at that size. */
 @media (max-width: 600px) {
-  .p2-canvas--photo { background-position: center top; background-size: cover; }
+  .p2-canvas--photo { background-position: center; background-size: auto 150%; }
 }
 
 @media (min-width: 600px) {

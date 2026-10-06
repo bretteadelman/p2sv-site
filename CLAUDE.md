@@ -46,6 +46,8 @@ When the design system is updated, re-copy `tokens/` and re-fix the font paths;
   - Full-bleed imagery: the sheet floats centred over Lambert's Pictorial
     Anatomy, Pl. 2 (public domain, via Artvee), `assets/img/home-anatomy-2.jpg`.
     The figure is sized from the viewport so it stands in the right-hand gutter.
+    On phones (≤600px) it is instead scaled to 150% of the page height and
+    centred, cropping off the plate's lettering and softening the figure.
     The greyscale + contrast treatment is baked into the file. Keep any other
     image the same way: B&W, never in colour. The current file is the 1088px
     free download and looks soft on large monitors; swap in the hi-res version.
