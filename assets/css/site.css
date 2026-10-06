@@ -14,6 +14,25 @@
   .p2-canvas { padding: var(--space-7) var(--space-5); }
 }
 
+/* Photo canvas (home only) · the sheet floats centred over a full-bleed
+   black-and-white photograph. The greyscale + contrast treatment from the
+   design system's imagery rule is baked into the file, so no filter here.
+   Unlike the plain canvas it keeps a gutter on a phone, so the photo shows. */
+.p2-canvas--photo {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-7) var(--space-4);
+  background: var(--ink) url("/assets/img/home-lake.jpg") center / cover no-repeat;
+}
+.p2-canvas--photo .p2-sheet { width: 100%; }
+
+@media (min-width: 600px) {
+  .p2-canvas--photo { padding: var(--space-8) var(--space-5); }
+}
+
 /* ── Sheet · the centred framed surface (Masthead.jsx) ───────────────────── */
 .p2-sheet {
   max-width: var(--sheet-width);
@@ -541,6 +560,7 @@ a.p2-wordmark:hover { text-decoration: none; }
   .p2-report { padding: 28px; max-width: 100%; }
   .p2-block, .p2-statrow, .p2-cardgrid, .p2-card { break-inside: avoid; }
   .p2-callout--cta, .p2-no-print { display: none; }
+  .p2-canvas--photo { background: none; min-height: 0; padding: 0; display: block; }
 
   /* The ink surfaces are the brand, not decoration: they have to print even
      when the browser's "background graphics" option is off, or paper text
