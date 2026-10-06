@@ -566,6 +566,19 @@ a.p2-wordmark:hover { text-decoration: none; }
 }
 .p2-label--inverse .p2-num { color: var(--paper); }
 
+/* Heading-size variant (legal pages): the section name is set at h2 in
+   roman title case, so it holds its own beside the 20px display numeral. */
+.p2-label--heading {
+  font-variant: normal;
+  text-transform: none;
+  font-size: var(--text-h2);
+  line-height: var(--leading-heading);
+  letter-spacing: 0;
+  font-weight: var(--weight-regular);
+  color: var(--text-primary);
+  margin: 0;
+}
+
 /* ── BarChart (BarChart.jsx) · no colour; projections hatched, ink outline ── */
 .p2-barchart { margin: var(--space-5) 0 0; display: flex; flex-direction: column; }
 .p2-bar-row {
