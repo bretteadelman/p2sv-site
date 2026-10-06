@@ -15,9 +15,10 @@
 }
 
 /* Photo canvas (home only) · the sheet floats centred over a full-bleed
-   black-and-white photograph. The greyscale + contrast treatment from the
-   design system's imagery rule is baked into the file, so no filter here.
-   Unlike the plain canvas it keeps a gutter on a phone, so the photo shows. */
+   black-and-white image: Lambert's Pictorial Anatomy, Pl. 2 (public domain).
+   The greyscale + contrast treatment from the design system's imagery rule
+   is baked into the file, so no filter here. Unlike the plain canvas it
+   keeps a gutter on a phone, so the image shows. */
 .p2-canvas--photo {
   min-height: 100vh;
   min-height: 100svh;
@@ -25,12 +26,31 @@
   align-items: center;
   justify-content: center;
   padding: var(--space-7) var(--space-4);
-  background: var(--ink) url("/assets/img/home-lake.jpg") center / cover no-repeat;
+  /* The figure stands ~60% across its plate. Pinning the plate's left edge
+     to the viewport's and sizing it to 125vw + 230px puts the figure at
+     75vw + 138px: the middle of the right-hand gutter beside the 552px sheet,
+     at any width, with the plate still covering the left edge. */
+  background: var(--ink) url("/assets/img/home-anatomy-2.jpg") left top / calc(125vw + 230px) auto no-repeat;
 }
 .p2-canvas--photo .p2-sheet { width: 100%; }
 
+@media (max-width: 600px) {
+  .p2-canvas--photo { background-position: center top; background-size: cover; }
+}
+
 @media (min-width: 600px) {
   .p2-canvas--photo { padding: var(--space-8) var(--space-5); }
+}
+
+/* On large screens (1400px+) the home page is set at 1.5x, which reads best at
+   that size: the same layout a reader would get at 150% browser zoom. */
+@media screen and (min-width: 1400px) {
+  .p2-canvas--photo {
+    zoom: 1.5;
+    /* zoom multiplies vw too, so 125vw becomes 125 / 1.5 = 83.333vw to keep
+       the plate where 150% browser zoom would put it. */
+    background-size: calc(83.333vw + 230px) auto;
+  }
 }
 
 /* ── Sheet · the centred framed surface (Masthead.jsx) ───────────────────── */

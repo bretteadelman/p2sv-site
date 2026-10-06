@@ -39,10 +39,17 @@ When the design system is updated, re-copy `tokens/` and re-fix the font paths;
 
 - Strictly monochrome: ink `#111111` on paper `#FAFAF8`, warm grey ramp, no accent color.
 - Radius 0, no shadows, no gradients except the hatch, no blur or transparency.
-- One deliberate exception to "no full-bleed imagery": the home page sits on a
-  full-bleed black-and-white photo (`.p2-canvas--photo`, `assets/img/home-lake.jpg`)
-  with the sheet floating centred over it. The greyscale + contrast treatment is
-  baked into the file. Keep any other photo the same way: B&W, never in colour.
+- Deliberate exceptions on the home page only (`.p2-canvas--photo`):
+  - Full-bleed imagery: the sheet floats centred over Lambert's Pictorial
+    Anatomy, Pl. 2 (public domain, via Artvee), `assets/img/home-anatomy-2.jpg`.
+    The figure is sized from the viewport so it stands in the right-hand gutter.
+    The greyscale + contrast treatment is baked into the file. Keep any other
+    image the same way: B&W, never in colour. The current file is the 1088px
+    free download and looks soft on large monitors; swap in the hi-res version.
+  - At 1400px and wider the page is set at `zoom: 1.5` (matches 150% browser
+    zoom), so the sheet is 828px there, not the design system's 552px. `zoom`
+    also scales `vw`, which is why the background size is divided by 1.5 in
+    that rule.
 - One ink frame per surface: 10px on the web. The header band is that frame thickened, wordmark bottom-left, italic meta right.
 - Climate Crisis (`--font-display`) only for the wordmark, numerals and very short caps. Never below 20px, never body copy. Everything else is EB Garamond.
 - Headlines: regular weight, title case, two beats — the second line italic.
@@ -66,7 +73,11 @@ Then render both pages at 1200px and at 360px, and print the brief to PDF, befor
 - **Commercial-readiness positioning and AI discoverability**: JSON-LD
   Organization schema, `llms.txt`, AI-crawler rules in `robots.txt`.
 - **Copy simplified**: builds table and FAQ sections dropped.
-- **Home photo background**: B&W lake photo full-bleed behind the centred
-  sheet; dropped in print.
+- **Home background**: B&W anatomy plate (Lambert's Pl. 2) full-bleed, figure
+  in the right gutter beside the sheet; dropped in print. Replaced an earlier
+  lake photo.
+- **Contact routes**: Founders, Partnerships, Investors (general Inquiries
+  removed), mirrored in the JSON-LD contactPoints and `llms.txt`.
+- **Large-screen sizing**: home page at 1.5x from 1400px.
 - **Flexible-model positioning**: new tagline, new Studio bullets, and the
   meta, JSON-LD and `llms.txt` descriptions brought in line.

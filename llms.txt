@@ -4,7 +4,7 @@
 
 ## Studio
 
-- [Homepage](https://pushtostart.ventures/): What P2SV is, studio credentials, and contact routes for partnerships, investors, and general inquiries.
+- [Homepage](https://pushtostart.ventures/): What P2SV is, studio credentials, and contact routes for founders, partnerships, and investors.
 
 ## Reports
 
@@ -12,4 +12,5 @@
 
 ## Contact
 
+- Founders (a trusted collaborator for product development, commercialization, and everything in between): brett@pushtostart.ventures
 - Partnerships (clinical, wellness, infusion clinics) and investor / co-build inquiries: brett@pushtostart.ventures
