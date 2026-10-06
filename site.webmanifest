@@ -1,0 +1,13 @@
+{
+  "name": "P2SV: Push to Start Ventures",
+  "short_name": "P2SV",
+  "description": "A Health + Wellness Venture Studio in Los Angeles, CA",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FAFAF8",
+  "theme_color": "#111111",
+  "icons": [
+    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

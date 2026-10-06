@@ -51,10 +51,11 @@ When the design system is updated, re-copy `tokens/` and re-fix the font paths;
     The greyscale + contrast treatment is baked into the file. Keep any other
     image the same way: B&W, never in colour. The current file is the 1088px
     free download and looks soft on large monitors; swap in the hi-res version.
-  - At 1400px and wider the page is set at `zoom: 1.5` (matches 150% browser
-    zoom), so the sheet is 828px there, not the design system's 552px. `zoom`
-    also scales `vw`, which is why the background size is divided by 1.5 in
-    that rule.
+  - At 1400px and wider the sheet is set at `zoom: 1.5` (matches 150% browser
+    zoom), so it is 828px there, not the design system's 552px. Only the
+    sheet is zoomed, never the body: Chrome scales `vw` under `zoom` and
+    Safari doesn't, so a zoomed body put the figure behind the sheet in
+    Safari. The body's padding and background size are scaled by hand.
 - One ink frame per surface: 10px on the web. The header band is that frame thickened, wordmark bottom-left, italic meta right.
 - Climate Crisis (`--font-display`) only for the wordmark, numerals and very short caps. Never below 20px, never body copy. Everything else is EB Garamond.
 - Headlines: regular weight, title case, two beats — the second line italic.
@@ -124,3 +125,13 @@ Then render both pages at 1200px and at 360px, and print the brief to PDF, befor
 - **Brief unframed** (Oct 6, 2026): the med spa brief drops the 10px side
   frame (`.p2-sheet--unframed`); the black band alone heads the page. The
   legal pages keep the full frame.
+- **Favicon and site name** (Oct 6, 2026): "P2" over "SV" in paper on an
+  ink square, outlined from the self-hosted Climate Crisis font (so the SVG
+  needs no font). Files: `favicon.svg`, `favicon.ico` (16/32/48),
+  `apple-touch-icon.png` (180), `assets/icons/icon-192.png` / `-512.png`,
+  `site.webmanifest`; linked in every page head. Site name everywhere is
+  "P2SV: Push to Start Ventures. A Health + Wellness Venture Studio in Los
+  Angeles, CA" (home title, OG/Twitter titles, `og:site_name`, descriptions,
+  JSON-LD, `llms.txt`). The 512 icon doubles as `og:image` and the JSON-LD
+  `logo` until a proper social card exists. If the real wordmark SVG
+  arrives, regenerate the icons from it.
