@@ -4,6 +4,8 @@ Static HTML. No build step, no framework. Pages are served from the repo root:
 
 - `index.html` — the home sheet
 - `medspa-market-brief.html` — the Med Spa Market Brief (Formspree contact form)
+- `privacy.html`, `terms.html` — Privacy Policy and Terms of Use, on the report sheet;
+  linked from every footer as `/privacy` and `/terms` (Netlify serves clean URLs)
 - `robots.txt`, `sitemap.xml`, `llms.txt` (AI-discoverability summary; keep in step with the homepage copy)
 
 ## Positioning
@@ -102,3 +104,13 @@ Then render both pages at 1200px and at 360px, and print the brief to PDF, befor
     founder-led panel) was tried and rejected; don't reintroduce it.
 - **Flexible-model positioning**: new tagline, new Studio bullets, and the
   meta, JSON-LD and `llms.txt` descriptions brought in line.
+- **Privacy Policy and Terms of Use** (Oct 6, 2026): linked from both footers
+  and under the brief's form. The privacy policy names PostHog, Formspree and
+  Netlify. Legal entity: Push to Start Ventures LLC.
+- **Cookieless analytics** (Oct 6, 2026): PostHog runs with
+  `cookieless_mode: 'always'` and `person_profiles: 'never'` on every page, so
+  no cookies or browser storage and no cookie banner. It depends on
+  "Cookieless server hash mode" being on in PostHog (Project Settings → Web
+  analytics); without it PostHog drops every event. New pages must copy the
+  same `posthog.init` config. If analytics,
+  forms or hosting change, update `privacy.html` to match.
