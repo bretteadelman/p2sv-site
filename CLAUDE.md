@@ -10,7 +10,8 @@ Static HTML. No build step, no framework. Pages are served from the repo root:
 
 ## Positioning
 
-- Tagline: **"0 to 1, or 1 to $1M"** (was "1 to 100").
+- Tagline: **"from 0 to 1 and from 1 to $10M"** (was "0 to 1, or 1 to $1M", before that "1 to 100").
+  On the home lede the figures are held together with `&nbsp;` so they never split across lines.
 - Operating model: **flexible operating models, designed to fit the needs of founders.**
   P2SV no longer describes itself as a fixed builder-operator that runs every
   venture itself; don't reintroduce "builder-operator", "under one roof" or
@@ -114,3 +115,7 @@ Then render both pages at 1200px and at 360px, and print the brief to PDF, befor
   analytics); without it PostHog drops every event. New pages must copy the
   same `posthog.init` config. If analytics,
   forms or hosting change, update `privacy.html` to match.
+- **Section headings at h2** (Oct 6, 2026): numbered section names on the
+  brief and legal pages use `.p2-label--heading` (22px, regular, title case)
+  beside the display numerals. Report pages keep a 16px/12px gutter on
+  phones so the frame doesn't touch the screen edge.

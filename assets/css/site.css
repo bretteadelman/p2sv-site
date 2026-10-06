@@ -6,9 +6,9 @@
    Nothing here introduces a colour, font, radius or shadow outside the tokens.
    ========================================================================== */
 
-/* ── Canvas · paper around the sheet. Flush to the viewport on a phone, so
-   the frame reads as the edge of the page itself. ─────────────────────────── */
-.p2-canvas { padding: 0; }
+/* ── Canvas · paper around the sheet. A narrow gutter on a phone, so the
+   frame reads as a sheet on the page rather than the edge of the screen. ── */
+.p2-canvas { padding: var(--space-4) var(--space-3); }
 
 @media (min-width: 600px) {
   .p2-canvas { padding: var(--space-7) var(--space-5); }
@@ -578,6 +578,11 @@ a.p2-wordmark:hover { text-decoration: none; }
   color: var(--text-primary);
   margin: 0;
 }
+.p2-label--inverse.p2-label--heading { color: var(--paper); }
+/* Extra air under the rule, so the section name and the headline below it
+   read as two levels rather than two stacked headings. */
+.p2-section > .p2-label--heading,
+.p2-block > .p2-label--heading { margin-bottom: var(--space-2); }
 
 /* ── BarChart (BarChart.jsx) · no colour; projections hatched, ink outline ── */
 .p2-barchart { margin: var(--space-5) 0 0; display: flex; flex-direction: column; }
@@ -667,6 +672,10 @@ a.p2-wordmark:hover { text-decoration: none; }
   flex-direction: column;
   gap: 14px;
 }
+/* Sub-heads and the callout inside the feature get room to breathe; the
+   card grid stays tight to its heading. */
+.p2-feature-body > .p2-h2 { margin-top: var(--space-4); }
+.p2-feature-body > .p2-callout--feature { margin: var(--space-3) 0; }
 
 /* ── Narrow widths ──────────────────────────────────────────────────────────
    The web sheet is a centred 552px column; below that it goes edge to edge
@@ -680,12 +689,13 @@ a.p2-wordmark:hover { text-decoration: none; }
   .p2-statrow { grid-template-columns: 1fr 1fr; row-gap: 20px; }
   .p2-stat:nth-child(odd) { padding-left: 0; border-left: none; }
   .p2-stat-value { font-size: min(var(--text-stat), calc(100cqw / 2 * 0.17)); }
-  .p2-block { padding: var(--space-5); }
+  .p2-block { padding: var(--space-5) var(--space-4); }
   .p2-feature-head,
-  .p2-feature-body { padding-left: var(--space-5); padding-right: var(--space-5); }
-  .p2-callout--feature { padding: var(--space-5); }
+  .p2-feature-body { padding-left: var(--space-4); padding-right: var(--space-4); }
+  .p2-callout--feature { padding: var(--space-5) var(--space-4); }
+  .p2-card { padding: var(--space-4); }
   .p2-callout-title { font-size: 34px; }
-  .p2-sheet--report .p2-report { padding: var(--space-5) var(--space-5) var(--space-6); }
+  .p2-sheet--report .p2-report { padding: var(--space-5) var(--space-4) var(--space-6); }
   .p2-bar-row { grid-template-columns: 64px 1fr 60px; gap: var(--space-3); }
   .p2-report { padding: var(--space-6) var(--space-4) var(--space-7); }
   .p2-sheetfooter,
