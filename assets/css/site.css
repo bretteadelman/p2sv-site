@@ -592,6 +592,23 @@ a.p2-wordmark:hover { text-decoration: none; }
   margin: 0;
 }
 .p2-label--inverse.p2-label--heading { color: var(--paper); }
+
+/* Section headers are set in the display face, in caps, at the 20px floor
+   and the same size as the numeral beside them. The home page's caps labels
+   (The Studio, Contact, Key Reports) get the same treatment. */
+.p2-label--heading,
+.p2-label--caps,
+.p2-label--inverse.p2-label--caps {
+  font-family: var(--font-display);
+  font-variation-settings: var(--display-variation);
+  font-weight: var(--weight-regular);
+  font-size: 20px;
+  line-height: var(--leading-heading);
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+.p2-label--inverse.p2-label--caps { color: var(--paper); }
+
 /* Extra air under the rule, so the section name and the headline below it
    read as two levels rather than two stacked headings. */
 .p2-section > .p2-label--heading,

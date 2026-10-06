@@ -58,6 +58,9 @@ When the design system is updated, re-copy `tokens/` and re-fix the font paths;
     Safari. The body's padding and background size are scaled by hand.
 - One ink frame per surface: 10px on the web. The header band is that frame thickened, wordmark bottom-left, italic meta right.
 - Climate Crisis (`--font-display`) only for the wordmark, numerals and very short caps. Never below 20px, never body copy. Everything else is EB Garamond.
+  Site exception (Oct 6, 2026): section headers are set in it too, in caps at 20px: the
+  numbered `.p2-label--heading` names and the home page's `.p2-label--caps`
+  labels (The Studio, Contact, Key Reports).
 - Headlines: regular weight, title case, two beats — the second line italic.
 - Lists use `—`, `·` or display-face numerals. No icons, no emoji.
 - Transitions are 120–200ms on color and background only. Nothing moves, fades or scales.
