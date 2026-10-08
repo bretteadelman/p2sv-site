@@ -837,6 +837,10 @@ a.p2-wordmark:hover { text-decoration: none; }
   gap: var(--space-3);
 }
 
+/* The Studio sits further from the Contact P2SV button than the sheet's
+   usual 24px gap: 48px in all. */
+.p2-group--after-cta { margin-top: var(--space-5); }
+
 @media (max-width: 400px) {
   .p2-defn-term { font-size: 22px; }
 }
