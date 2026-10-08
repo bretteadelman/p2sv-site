@@ -103,6 +103,11 @@
       A health and wellness venture studio that takes businesses from&nbsp;0&nbsp;to&nbsp;1 and from&nbsp;1&nbsp;to&nbsp;$10M.
     </p>
 
+    <div>
+      <!-- Opens the contact modal; falls back to email without JavaScript. -->
+      <a href="mailto:brett@pushtostart.ventures" class="p2-btn" id="contact-open">Contact <span class="p2-literal">P2SV</span></a>
+    </div>
+
     <section class="p2-group">
       <h2 class="p2-label p2-label--caps">The Studio</h2>
       <ul class="p2-list">
@@ -137,6 +142,105 @@
 
   </div>
 </div>
+
+<!-- CONTACT MODAL · the brief's "Start a Conversation" form, in a framed dialog -->
+<dialog class="p2-modal" id="contact-modal" aria-labelledby="contact-modal-title">
+  <section class="p2-block" id="contact-modal-body">
+    <div class="p2-modal-head">
+      <div class="p2-label">Start a Conversation</div>
+      <button class="p2-btn p2-btn--link" type="button" id="contact-close">Close</button>
+    </div>
+    <h2 class="p2-h2" id="contact-modal-title">Working with Founders, Partners<br /><em>and Investors in Health and Wellness.</em></h2>
+    <p>P2SV is a health and wellness venture studio that takes businesses from 0 to 1 and from 1 to $10M. It works with founders, clinical and wellness partners, and investors. Introduce yourself.</p>
+    <form id="contact-form" class="p2-group">
+      <input type="hidden" name="page" value="home" />
+      <div class="p2-two-col" style="gap:var(--space-3);">
+        <div class="p2-field">
+          <label class="p2-label" for="name">Name</label>
+          <input class="p2-input" type="text" id="name" name="name" required />
+        </div>
+        <div class="p2-field">
+          <label class="p2-label" for="email">Email</label>
+          <input class="p2-input" type="email" id="email" name="email" required />
+        </div>
+      </div>
+      <div class="p2-field">
+        <label class="p2-label" for="role">I am a</label>
+        <span class="p2-select-wrap"><select class="p2-select" id="role" name="role">
+          <option value="">Select…</option>
+          <option value="founder">Founder</option>
+          <option value="partner">Clinical or wellness partner</option>
+          <option value="investor">Investor</option>
+          <option value="other">Other</option>
+        </select></span>
+      </div>
+      <div class="p2-field">
+        <label class="p2-label" for="message">Message (optional)</label>
+        <textarea class="p2-textarea" id="message" name="message"></textarea>
+      </div>
+      <div>
+        <button class="p2-btn" type="submit">Send Introduction</button>
+      </div>
+      <div class="p2-source">P2SV uses these details only to reply. See the <a href="/privacy">Privacy Policy</a>.</div>
+    </form>
+  </section>
+</dialog>
+
+<script>
+  (function () {
+    var FORMSPREE = 'https://formspree.io/f/xnjobwpa';
+    var modal = document.getElementById('contact-modal');
+    var open  = document.getElementById('contact-open');
+    var form  = document.getElementById('contact-form');
+    var body  = document.getElementById('contact-modal-body');
+    if (!modal || !open || !form || !body || !modal.showModal) return;
+
+    open.addEventListener('click', function (e) {
+      e.preventDefault();
+      modal.showModal();
+    });
+
+    // Close on the button, or on a click outside the framed panel.
+    modal.addEventListener('click', function (e) {
+      if (e.target === modal || e.target.id === 'contact-close') modal.close();
+    });
+
+    function notice(label, title, text) {
+      body.innerHTML =
+        '<div class="p2-modal-head">' +
+          '<div class="p2-label">' + label + '</div>' +
+          '<button class="p2-btn p2-btn--link" type="button" id="contact-close">Close</button>' +
+        '</div>' +
+        (title ? '<h2 class="p2-h2">' + title + '</h2>' : '') +
+        '<p>' + text + '</p>';
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      fetch(FORMSPREE, {
+        method:  'POST',
+        headers: { 'Accept': 'application/json' },
+        body:    new FormData(form)
+      })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.ok) {
+          notice('Message Received',
+            'Introduction Sent.<br /><em>We&rsquo;ll Be in Touch Shortly.</em>',
+            'Your message has been received by the P2SV team. Expect a response within one to two business days.');
+        } else {
+          notice('Something Went Wrong', '',
+            'Please reach us directly at <a href="mailto:brett@pushtostart.ventures">brett@pushtostart.ventures</a>.');
+        }
+      })
+      .catch(function () {
+        notice('Something Went Wrong', '',
+          'Please reach us directly at <a href="mailto:brett@pushtostart.ventures">brett@pushtostart.ventures</a>.');
+      });
+    });
+  })();
+</script>
 
 </body>
 </html>

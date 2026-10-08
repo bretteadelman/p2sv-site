@@ -707,6 +707,42 @@ a.p2-wordmark:hover { text-decoration: none; }
 .p2-feature-body > .p2-h2 { margin-top: var(--space-4); }
 .p2-feature-body > .p2-callout--feature { margin: var(--space-3) 0; }
 
+/* ── Contact modal · home page ───────────────────────────────────────────────
+   The brief's "Start a Conversation" block in a native <dialog>, framed like
+   the sheet. The system allows no transparency or blur, so the backdrop is
+   the hatch over solid paper rather than a dimmed scrim. */
+.p2-modal {
+  width: min(var(--sheet-width), calc(100vw - 2 * var(--space-4)));
+  max-width: none;
+  max-height: calc(100dvh - 2 * var(--space-4));
+  padding: 0;
+  border: var(--border-frame) solid var(--border-frame-color);
+  border-radius: var(--radius);
+  background: var(--surface-sheet);
+  color: var(--text-primary);
+  overflow: auto;
+}
+
+.p2-modal::backdrop { background: var(--hatch-light), var(--paper); }
+
+.p2-modal > .p2-block { border: none; }
+
+/* The label's rule runs under the whole row, Close included. */
+.p2-modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-4);
+  border-bottom: var(--border-hair) solid var(--border-hair-color);
+  padding-bottom: var(--space-2);
+}
+.p2-modal-head .p2-btn--link { font-size: var(--text-label); }
+
+/* Matches the sheet's 1.5x on large screens. */
+@media screen and (min-width: 1400px) {
+  .p2-modal { zoom: 1.5; max-height: calc((100dvh - 2 * var(--space-4)) / 1.5); }
+}
+
 /* ── Narrow widths ──────────────────────────────────────────────────────────
    The web sheet is a centred 552px column; below that it goes edge to edge
    and the band scales with the wordmark, keeping the frame intact. */

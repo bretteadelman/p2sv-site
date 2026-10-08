@@ -138,3 +138,9 @@ Then render both pages at 1200px and at 360px, and print the brief to PDF, befor
   JSON-LD, `llms.txt`). The 512 icon doubles as `og:image` and the JSON-LD
   `logo` until a proper social card exists. If the real wordmark SVG
   arrives, regenerate the icons from it.
+- **Home contact modal** (Oct 8, 2026): a "Contact P2SV" button under the
+  lede opens the brief's Start a Conversation form in a native `<dialog>`
+  (`.p2-modal`), framed like the sheet, over a hatch-on-paper backdrop (no
+  scrim, since transparency is off-system). Same Formspree form as the brief,
+  with a hidden `page: home` field; copy and role options adapted for the
+  home page. Falls back to `mailto:` without JavaScript.
