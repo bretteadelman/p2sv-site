@@ -144,3 +144,15 @@ Then render both pages at 1200px and at 360px, and print the brief to PDF, befor
   scrim, since transparency is off-system). Same Formspree form as the brief,
   with a hidden `page: home` field; copy and role options adapted for the
   home page. Falls back to `mailto:` without JavaScript.
+  - The Studio has 48px above it (`.p2-group--after-cta`), double the
+    sheet's usual gap, so the button stands apart from the section.
+  - The page behind is locked while the modal is open
+    (`html:has(.p2-modal[open])`) and the modal has
+    `overscroll-behavior: contain`; without them phones scrolled the page
+    once the form reached its end. Tested in Chrome's phone emulation
+    only; confirm on a real iPhone.
+  - Setting the button in Climate Crisis caps was tried and rejected; it
+    stays in the serif small caps like every other button.
+  - Formspree needs no authentication. Both forms share one form ID, so
+    keep its captcha off (the AJAX submit can't pass it) and mind the free
+    plan's monthly submission cap.
