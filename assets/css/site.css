@@ -725,6 +725,12 @@ a.p2-wordmark:hover { text-decoration: none; }
 
 .p2-modal::backdrop { background: var(--hatch-light), var(--paper); }
 
+/* A modal <dialog> doesn't stop the page behind it scrolling, and on phones
+   a swipe that reaches the end of the form carries on into the page. Lock
+   the page while it's open and keep the form's scroll to itself. */
+html:has(.p2-modal[open]) { overflow: hidden; }
+.p2-modal { overscroll-behavior: contain; }
+
 .p2-modal > .p2-block { border: none; }
 
 /* The label's rule runs under the whole row, Close included. */
